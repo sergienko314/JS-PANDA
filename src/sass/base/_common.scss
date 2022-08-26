@@ -1,0 +1,15 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
