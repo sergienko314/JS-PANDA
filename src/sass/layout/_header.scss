@@ -1,0 +1,18 @@
+// body {
+//     background-color: gray;
+// }
+
+.rad {
+    margin-top: -150px;
+    margin-left: -175px;
+    width: 350px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(136.07deg, rgba(189, 56, 56, 0.03) 10.75%, rgba(196, 196, 196, 0) 92.33%);
+    backdrop-filter: blur(30px);
+}
+
+.header-title {
+    color: var(--accent-color);
+    text-align: center;
+}
