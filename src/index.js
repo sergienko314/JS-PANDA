@@ -1,1 +1,1 @@
-import fetchEvents from './js/getEventsApi';
+import { fetchEvents } from './js/getEventsApi';
