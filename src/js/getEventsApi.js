@@ -18,10 +18,7 @@ export let options = {
 
 export async function fetchEvents() {
   try {
-    const response = await axios.get(
-      `${BASE_URL}?apikey=${options.params.apikey}`,
-      options
-    );
+    const response = await axios.get(`${BASE_URL}?`, options);
     return response;
   } catch (error) {
     console.error(error);
@@ -40,10 +37,7 @@ export async function fetchQueryEvents() {
   const q = searchBtn.value;
   try {
     options.params.keyword = `${q}`;
-    const response = await axios.get(
-      `${BASE_URL}?apikey=${options.params.apikey}`,
-      options
-    );
+    const response = await axios.get(`${BASE_URL}?`, options);
 
     return response;
   } catch {

@@ -4,14 +4,20 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
+    justify-content: center;
 
 }
 
 .event-item{
-    width: 250px;
+    width: 300px;
 }
 
 .event-item__info{
     color: #fff;
+}
+
+.event-item__img{
+width: 300px;
+height: 230px;
 }
