@@ -31,6 +31,7 @@ body {
 }
 
 header {
+
     z-index: -10;
     background-repeat: no-repeat;
     background-position: left top;
@@ -54,12 +55,11 @@ body {
     object-position: right top;
     background-position: 50% 50%;
 
+
     background-repeat: no-repeat;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    // position: absolute;
+
     padding-bottom: 56px;
     margin-right: 0;
     margin-left: auto;
@@ -88,13 +88,8 @@ body {
     height: 100px;
 }
 
-<<<<<<< Updated upstream
-.header-text {
-=======
-// .header-text {}
-
 .header-title {
->>>>>>> Stashed changes
+
 
     //color: var(--accent-color);
     text-align: center;
@@ -113,31 +108,31 @@ body {
     @media screen and (min-width: 768px) {
         font-size: 30px;
         line-height: 37px;
-<<<<<<< Updated upstream
+
         width: 400px;
         // height: 74px;
         padding-top: 40px;
         padding-bottom: 40px;
-=======
+
         min-width: 400px;
         height: 74px;
         margin-top: 40px;
         margin-bottom: 40px;
->>>>>>> Stashed changes
+
     }
 
     @media screen and (min-width: 1200px) {
         font-size: 50px;
         line-height: 61px;
-<<<<<<< Updated upstream
+
         width: 608px;
         // height: 122px;
         padding-bottom: 48px;
-=======
+
         max-width: 608px;
         height: 122px;
         margin-bottom: 48px;
->>>>>>> Stashed changes
+
     }
 }
 
