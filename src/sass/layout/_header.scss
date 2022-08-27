@@ -3,6 +3,11 @@ body {
     background-color: black;
 }
 
+header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 header .container {
 
     background-repeat: no-repeat;
@@ -12,11 +17,16 @@ header .container {
     height: 100%;
     position: absolute;
     padding-bottom: 56px;
+    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
 
     @media screen and (min-width: 320px) {
         background-image: url(../images/logo-s.png);
         padding-left: 20px;
         padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
 
     }
 
@@ -25,6 +35,9 @@ header .container {
         padding-left: 32px;
         padding-right: 32px;
         padding-bottom: 80px;
+        padding-top: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @media screen and (min-width: 1200px) {
