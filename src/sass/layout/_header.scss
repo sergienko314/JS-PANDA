@@ -1,6 +1,33 @@
 body {
     // position: relative;
     background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 320px;
+
+    /*  Comment out this line  */
+    // background-attachment: fixed;
+
+    // @media screen and (min-width: 320px) {
+    // height: 364px;
+    // min-width: 320px;
+    background-image: url(../images/bgr-picture-s.png);
+    // background-size: ;
+    // }
+
+    @media screen and (min-width: 768px) {
+        // width: 768px;
+        // height: 364px;
+        background-image: url(../images/bgr-picture-m.png);
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        // width: 1280px;
+        // height: 320px;
+        background-image: url(../images/bgr-picture-l.png);
+    }
 }
 
 header {
@@ -61,7 +88,13 @@ body {
     height: 100px;
 }
 
+<<<<<<< Updated upstream
 .header-text {
+=======
+// .header-text {}
+
+.header-title {
+>>>>>>> Stashed changes
 
     //color: var(--accent-color);
     text-align: center;
@@ -80,18 +113,31 @@ body {
     @media screen and (min-width: 768px) {
         font-size: 30px;
         line-height: 37px;
+<<<<<<< Updated upstream
         width: 400px;
         // height: 74px;
         padding-top: 40px;
         padding-bottom: 40px;
+=======
+        min-width: 400px;
+        height: 74px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+>>>>>>> Stashed changes
     }
 
     @media screen and (min-width: 1200px) {
         font-size: 50px;
         line-height: 61px;
+<<<<<<< Updated upstream
         width: 608px;
         // height: 122px;
         padding-bottom: 48px;
+=======
+        max-width: 608px;
+        height: 122px;
+        margin-bottom: 48px;
+>>>>>>> Stashed changes
     }
 }
 
