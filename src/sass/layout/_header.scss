@@ -6,26 +6,18 @@ body {
     background-repeat: no-repeat;
     min-height: 320px;
 
-    /*  Comment out this line  */
-    // background-attachment: fixed;
 
-    // @media screen and (min-width: 320px) {
-    // height: 364px;
-    // min-width: 320px;
     background-image: url(../images/bgr-picture-s.png);
-    // background-size: ;
-    // }
+
 
     @media screen and (min-width: 768px) {
-        // width: 768px;
-        // height: 364px;
+
         background-image: url(../images/bgr-picture-m.png);
 
     }
 
     @media screen and (min-width: 1200px) {
-        // width: 1280px;
-        // height: 320px;
+
         background-image: url(../images/bgr-picture-l.png);
     }
 }
@@ -50,36 +42,36 @@ header {
 
 }
 
-body {
-    object-fit: cover;
-    object-position: right top;
-    background-position: 50% 50%;
+// body {
+//     object-fit: cover;
+//     object-position: right top;
+//     background-position: 50% 50%;
 
 
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+//     background-repeat: no-repeat;
+//     width: 100%;
+//     height: 100%;
 
-    padding-bottom: 56px;
-    margin-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-
-    background-image: url(../images/bg-logo-m.png);
+//     padding-bottom: 56px;
+//     margin-right: 0;
+//     margin-left: auto;
+//     margin-right: auto;
 
 
+//     background-image: url(../images/bg-logo-m.png);
 
-    @media screen and (min-width: 768px) {
-        background-image: url(../images/bg-logo-l.png);
 
-    }
 
-    @media screen and (min-width: 1200px) {
-        background-image: url(../images/logo-l.png);
+//     @media screen and (min-width: 768px) {
+//         background-image: url(../images/bg-logo-l.png);
 
-    }
-}
+//     }
+
+//     @media screen and (min-width: 1200px) {
+//         background-image: url(../images/logo-l.png);
+
+//     }
+// }
 
 
 
@@ -88,53 +80,63 @@ body {
     height: 100px;
 }
 
-.header-title {
+// .header-text {
+//     text-align: center;
+//     font-weight: 900;
+//     font-size: 18px;
+//     line-height: 22px;
+//     width: 280px;
 
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding-top: 80px;
+//     padding-bottom: 24px;
+//     margin-top: 0;
 
-    //color: var(--accent-color);
-    text-align: center;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 22px;
-    width: 280px;
-    // height: 44px;
+//     @media screen and (min-width: 768px) {
+//         font-size: 30px;
+//         line-height: 37px;
 
-    margin-left: auto;
-    margin-right: auto;
+//         width: 400px;
+//         padding-top: 40px;
+//         padding-bottom: 40px;
+
+//         min-width: 400px;
+//         height: 74px;
+//         margin-top: 40px;
+//         margin-bottom: 40px;
+
+//     }
+
+//     @media screen and (min-width: 1200px) {
+//         font-size: 40px;
+//         line-height: 61px;
+
+//         padding-bottom: 48px;
+
+//         max-width: 608px;
+//         height: 122px;
+//         margin-bottom: 48px;
+
+//     }
+// }
+.header-text {
     padding-top: 80px;
-    padding-bottom: 24px;
+    // padding-bottom: 24px;
     margin-top: 0;
 
     @media screen and (min-width: 768px) {
-        font-size: 30px;
-        line-height: 37px;
-
-        width: 400px;
-        // height: 74px;
         padding-top: 40px;
-        padding-bottom: 40px;
-
-        min-width: 400px;
-        height: 74px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-
+        padding-bottom: 0px;
     }
 
     @media screen and (min-width: 1200px) {
-        font-size: 50px;
-        line-height: 61px;
-
-        width: 608px;
-        // height: 122px;
-        padding-bottom: 48px;
-
-        max-width: 608px;
-        height: 122px;
-        margin-bottom: 48px;
+        padding-top: 30px;
+        padding-bottom: 0px;
 
     }
 }
+
 
 
 svg text {
@@ -143,7 +145,23 @@ svg text {
     stroke-width: 2;
     stroke: var(--accent-color);
     font-size: 100px;
+    padding-top: 0;
+
+
+
+    @media screen and (min-width: 768px) {
+        font-size: 50px;
+        line-height: 37px;
+        min-width: 400px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 60px;
+        line-height: 61px;
+        max-width: 608px;
+    }
 }
+
 
 @keyframes stroke {
     0% {
@@ -382,7 +400,3 @@ svg text {
     }
 
 }
-
-// .modal-wrap input {
-//     margin-right: 32px;
-// }
