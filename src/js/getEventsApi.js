@@ -1,5 +1,6 @@
 import axios from 'axios';
 import EventList from '../templates/EventListMarkup.hbs';
+import EventItem from '../templates/EventItemMarkup.hbs';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 const list = document.querySelector('.js-eventList');
 
@@ -12,10 +13,6 @@ export const options = {
   },
 };
 
-export function MakeListMarkup(data) {
-  list.insertAdjacentHTML('beforeend', EventList(data));
-}
-
 export async function fetchEvents() {
   try {
     const response = await axios.get(
@@ -27,3 +24,11 @@ export async function fetchEvents() {
     console.error(error);
   }
 }
+
+export function MakeListMarkup(data) {
+  list.insertAdjacentHTML('beforeend', EventList(data));
+}
+
+//export function MakeItemMarkup(data) {
+//  ***.insertAdjacentHTML('beforeend', EventItem(data))
+//}
