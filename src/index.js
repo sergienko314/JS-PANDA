@@ -1,23 +1,22 @@
+import { fetchEvents, options } from './js/getEventsApi';
 import {
-  fetchEvents,
   MakeListMarkup,
   fetchQueryEvents,
   eventSearchByName,
-} from './js/getEventsApi';
+} from './js/eventSearchByName';
 import { onEventLiClick, makeModalMarkup } from './js/modal';
-import debounce from 'lodash.debounce';
+
 import './js/pagination';
 //import './js/armymodal';
 import './js/modal';
-const searchBtn = document.querySelector('[name="startSearch"]');
-searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
 
-fetchEvents().then(({ data }) => console.log(data));
-fetchEvents().then(({ data }) => MakeListMarkup(data._embedded.events));
+function getInfo() {
+  const res = fetchEvents();
+  res.then(items => MakeListMarkup(items.data._embedded.events));
+}
 
-//=========================
+// getInfo();
 
-// const eventLi = document.querySelector('.event-item');
 // eventLi.addEventListener('click', onEventLiClick);
 
-fetchEvents().then(({ data }) => makeModalMarkup(data._embedded.events[14]));
+//fetchEvents().then(({ data }) => makeModalMarkup(data._embedded.events[14]));
