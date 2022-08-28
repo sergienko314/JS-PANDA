@@ -2,7 +2,7 @@ import axios from 'axios';
 import { options, BASE_URL } from './getEventsApi';
 import EventList from '../templates/EventListMarkup.hbs';
 import debounce from 'lodash.debounce';
-import onEventLiClick from './modal';
+import { onEventLiClick } from './modal';
 
 const list = document.querySelector('.js-eventList');
 const searchBtn = document.querySelector('[name="startSearch"]');
@@ -29,8 +29,8 @@ export function eventSearchByName() {
   });
 }
 
-export function MakeListMarkup(data) {
+export async function MakeListMarkup(data) {
   list.insertAdjacentHTML('beforeend', EventList(data));
-  const li = document.querySelectorAll('event-item');
-  console.log(li);
+  const li = document.querySelector('.event-list');
+  await li.addEventListener('click', onEventLiClick);
 }

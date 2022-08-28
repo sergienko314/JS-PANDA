@@ -12,4 +12,4 @@ import './js/modal';
 
 // eventLi.addEventListener('click', onEventLiClick);
 
-//fetchEvents().then(({ data }) => makeModalMarkup(data._embedded.events[14]));
+fetchEvents().then(({ data }) => MakeListMarkup(data._embedded.events));
