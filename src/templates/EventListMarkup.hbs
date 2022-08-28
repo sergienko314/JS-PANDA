@@ -5,9 +5,9 @@
             
             <div class="event-item__info">
               <img class="event-item__img" src={{images.0.url}} alt={{name}} loading="lazy" />
-              <p class="info-item">{{name}}</p>
-              <p class="info-item">{{dates.start.localDate}}</p>
-              <p class="info-item">{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}</p>
+              <p class="info-item__title">{{name}}</p>
+              <p class="info-item__date">{{dates.start.localDate}}</p>
+              <p class="info-item__location">{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}</p>
              
             </div>
     </li>
