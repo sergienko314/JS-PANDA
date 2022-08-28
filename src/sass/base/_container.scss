@@ -19,4 +19,19 @@ body {
     padding-right: 16px;
     max-width: 1280px;
   }
+
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 320px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: url(../images/allBg-lg_x1.jpeg);
+    background-position: center, top;
+  }
 }
+
