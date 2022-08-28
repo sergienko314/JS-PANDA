@@ -1,14 +1,33 @@
 body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/src/images/hero-sm_x1.jpeg'),
+    url('/src/images/allBg-sm_x1.jpeg');
+  background-repeat: no-repeat;
+  background-position: top 0px center, top 364px center;
+
+  @media screen and (min-width: 768px) {
+    background-image: url('/src/images/hero-md_x1.jpeg'),
+      url('/src/images/allBg-md_x1.jpeg');
+
+    background-position: top 0px center, top 364px center;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url('/src/images/hero-lg_x1.jpeg'),
+      url('/src/images/allBg-lg_x1.jpeg');
+
+    background-position: top 0px center, top 446px center;
+  }
+}
+
+.container {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 320px;
 
   @media screen and (min-width: 320px) {
     max-width: 480px;
@@ -21,8 +40,6 @@ body {
   }
 
   @media screen and (min-width: 1280px) {
-    background-image: url(../images/allBg-lg_x1.jpeg);
-    background-position: center, top;
     padding-left: 16px;
     padding-right: 16px;
     max-width: 1280px;
