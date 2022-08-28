@@ -3,12 +3,18 @@ import { options, BASE_URL } from './getEventsApi';
 import EventList from '../templates/EventListMarkup.hbs';
 import debounce from 'lodash.debounce';
 import { onEventLiClick } from './modal';
+import { fetchEvents } from './getEventsApi';
 
 const list = document.querySelector('.js-eventList');
 const searchBtn = document.querySelector('[name="startSearch"]');
 const country = document.querySelector('[name="сhoose-country"]');
 
 searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
+country.addEventListener('change', countryCode => {
+  countryCode = country.value;
+  options.countryCode = countryCode;
+  fetchEventsasync(options);
+});
 
 export async function fetchQueryEvents() {
   const q = searchBtn.value;
