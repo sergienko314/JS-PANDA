@@ -10,6 +10,4 @@ import './js/pagination';
 //import './js/armymodal';
 import './js/modal';
 
-// eventLi.addEventListener('click', onEventLiClick);
-
-fetchEvents().then(({ data }) => MakeListMarkup(data._embedded.events));
+fetchEvents().then(res => MakeListMarkup(res.data._embedded.events));
