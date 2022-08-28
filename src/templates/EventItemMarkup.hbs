@@ -1,13 +1,12 @@
-<img class='modal__img--small' src='./images/images.jpg' alt='small' />
+<img class='modal__img--small' src={{images.0.url}} alt={{name}} />
 <div class='modal__positions'>
-  <img class='modal__img--big' src='./images/images.jpg' alt='big' />
+  <img class='modal__img--big' src={{images.0.url}} alt='big' />
   <div>
     <ul class='modal__list'>
       <li class='modal__item'>
         <h2 class='modal__info'>INFO</h2>
         <p class='modal__info--text'>
-          Atlas Weekend is the largest music festival in Ukraine. More than 200
-          artists will create a proper music festival atmosphere on 10 stages
+          {{this._embedded.events.0.info}}
         </p>
       </li>
       <li class='modal__item'>
