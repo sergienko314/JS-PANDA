@@ -14,12 +14,14 @@ ul {
   backdrop-filter: blur(3px);
 }
 .modal {
+  position: relative;
   background-color: white;
   overflow: auto;
   width: 280px;
   height: 952px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 150px 0px;
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -32,34 +34,47 @@ ul {
 }
 
 .modal__btn--close {
-  float: right;
+  position: absolute;
   border: none;
   background-color: white;
-  margin-top: 24px;
-  margin-right: 24px;
+  z-index: 1;
+  top: 16px;
+  right: 20px;
 }
 
 .modal__img--small {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50%;
-  margin-top: 80px;
   width: 102px;
   height: 102px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  border-radius: 50%;
 
   @media screen and (min-width: 768px) {
     width: 70px;
     height: 70px;
+    margin-bottom: 40px;
+    margin-top: 32px;
   }
   @media screen and (min-width: 1200px) {
     width: 132px;
     height: 132px;
+    margin-top: 54px;
   }
 }
 
 .modal__positions {
   display: flex;
+  justify-content: space-around;
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 40px;
+  }
 }
 
 .modal__img--big {
@@ -69,6 +84,7 @@ ul {
     display: block;
     width: 249px;
     height: 445px;
+    object-fit: cover;
   }
   @media screen and (min-width: 1200px) {
     width: 427px;
@@ -77,11 +93,26 @@ ul {
 }
 
 .modal__list {
+  max-width: 243px;
   list-style: none;
+  @media screen and (min-width: 768px) {
+    max-width: 287px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 433px;
+  }
 }
 
 .modal__item {
   margin-bottom: 16px;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .modal__info {
@@ -94,9 +125,21 @@ ul {
   text-align: center;
 
   color: #dc56c5;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 7px;
+
+    font-size: 24px;
+    line-height: 29px;
+  }
 }
 
 .modal__info--text {
+  margin-bottom: 3px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -105,6 +148,101 @@ ul {
   text-align: center;
 
   color: #0e0e0e;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.modal__info--prices {
+  margin-bottom: 16px;
+  text-align: center;
+  color: #0e0e0e;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.modal__btn--buy {
+  display: block;
+  height: 40px;
+  width: 145px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: #4c00fe;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 32px;
+    font-size: 18px;
+
+    // &:last-child {
+    //   margin-bottom: 0px;
+    // }
+  }
+}
+
+.modal__btn--buy:focus,
+.modal__btn--buy:hover {
+  font-size: 18px;
+  color: rgb(255, 255, 0);
+  background: #4005cb;
+}
+
+.modal__btn--more {
+  display: block;
+  max-width: 230px;
+  height: 40px;
+  padding: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  background: #fff2fd;
+  color: #4c00fe;
+  border: 1px solid #4c00fe;
+  border-radius: 5px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 255px;
+  }
+}
+
+.modal__btn--more:focus,
+.modal__btn--more:hover {
+  color: #fff2fd;
+  background: #4c00fe;
 }
 
 // .is-hidden {
