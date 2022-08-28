@@ -6,11 +6,16 @@ import onEventLiClick from './modal';
 
 const list = document.querySelector('.js-eventList');
 const searchBtn = document.querySelector('[name="startSearch"]');
+const country = document.querySelector('[name="сhoose-country"]');
+
 searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
 
 export async function fetchQueryEvents() {
   const q = searchBtn.value;
   try {
+    if (country.value !== '') {
+      options.params.countryCode = country.value;
+    }
     options.params.keyword = `${q}`;
     const response = await axios.get(`${BASE_URL}?`, options);
     return response;
@@ -21,11 +26,14 @@ export async function fetchQueryEvents() {
 
 export function eventSearchByName() {
   list.innerHTML = '';
+
   fetchQueryEvents().then(res => {
     if (res.data.page.totalElements === 0) {
-      alert('No any EVENTS');
+      list.innerHTML = `<p class="no-event">Sorry, no one event find!</p>`;
+      searchBtn.value = '';
     }
     MakeListMarkup(res.data._embedded.events);
+    searchBtn.value = '';
   });
 }
 

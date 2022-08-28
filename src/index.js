@@ -1,5 +1,4 @@
 import { fetchEvents, options } from './js/getEventsApi';
-import { coutryCode } from './js/coutryCode';
 import {
   MakeListMarkup,
   fetchQueryEvents,
