@@ -4,6 +4,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 320px;
+
   @media screen and (min-width: 320px) {
     max-width: 480px;
   }
@@ -14,23 +20,11 @@ body {
     max-width: 768px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/allBg-lg_x1.jpeg);
+    background-position: center, top;
     padding-left: 16px;
     padding-right: 16px;
     max-width: 1280px;
-  }
-
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 320px;
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1200px) {
-    background-image: url(../images/allBg-lg_x1.jpeg);
-    background-position: center, top;
   }
 }
