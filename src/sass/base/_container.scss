@@ -8,11 +8,27 @@ body {
   background-repeat: no-repeat;
   background-position: top 0px center, top 364px center;
 
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('/src/images/hero-sm_x2.jpeg'),
+      url('/src/images/allBg-sm_x2.jpeg');
+  }
+
   @media screen and (min-width: 768px) {
     background-image: url('/src/images/hero-md_x1.jpeg'),
       url('/src/images/allBg-md_x1.jpeg');
 
     background-position: top 0px center, top 364px center;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('/src/images/hero-md_x2.jpeg'),
+        url('/src/images/allBg-md_x2.jpeg');
+    }
   }
 
   @media screen and (min-width: 1280px) {
@@ -20,6 +36,14 @@ body {
       url('/src/images/allBg-lg_x1.jpeg');
 
     background-position: top 0px center, top 446px center;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('/src/images/hero-lg_x2.jpeg'),
+        url('/src/images/allBg-lg_x2.jpeg');
+    }
   }
 }
 
