@@ -1,0 +1,41 @@
+<img class='modal__img--small' src={{images.0.url}} alt={{name}} />
+<div class='modal__positions'>
+  <img class='modal__img--big' src={{images.0.url}} alt='big' />
+  <div>
+    <ul class='modal__list'>
+      <li class='modal__item'>
+        <h2 class='modal__info'>INFO</h2>
+        <p class='modal__info--text'>
+          {{this._embedded.events.0.info}}
+        </p>
+      </li>
+      <li class='modal__item'>
+        <h2 class='modal__info'>WHEN</h2>
+        <p class='modal__info--text'>2021-06-09</p>
+        <p class='modal__info--text'>20:00 (Kyiv/Ukraine)</p>
+      </li>
+      <li class='modal__item'>
+        <h2 class='modal__info'>WHERE</h2>
+        <p class='modal__info--text'>Kyiv, Ukraine</p>
+        <p class='modal__info--text'>VDNH</p>
+      </li>
+      <li class='modal__item'>
+        <h2 class='modal__info'>WHO</h2>
+        <p class='modal__info--text'>The Black Eyed Peas</p>
+      </li>
+    </ul>
+    <ul class='modal__list'>
+      <li>
+        <h2 class='modal__info'>PRICES</h2>
+      </li>
+      <li class='modal__item'>
+        <p class='modal__info--prices'>Standart 300-500 UAH</p>
+        <button class='modal__btn--buy'>BUY TICKETS</button>
+      </li>
+      <li class='modal__item'>
+        <p class='modal__info--prices'>VIP 1000-1500 UAH</p>
+        <button class='modal__btn--buy'>BUY TICKETS</button>
+      </li>
+    </ul>
+  </div>
+</div>

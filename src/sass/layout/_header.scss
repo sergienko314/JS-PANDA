@@ -1,5 +1,16 @@
-header {
+.header-section {
+    background-repeat: no-repeat;
 
+    @media screen and (min-width: 768px) {
+        background-image: url(../images/logo-m.png);
+    }
+
+    @media screen and (min-width: 1200px) {
+        background-image: url(../images/logo-l.png);
+    }
+}
+
+header {
     z-index: -10;
     background-repeat: no-repeat;
     background-position: left top;
@@ -8,21 +19,17 @@ header {
 
     @media screen and (min-width: 768px) {
         background-image: url(../images/logo-m.png);
-
     }
 
     @media screen and (min-width: 1200px) {
         background-image: url(../images/logo-l.png);
-
     }
-
 }
 
 // body {
 //     object-fit: cover;
 //     object-position: right top;
 //     background-position: 50% 50%;
-
 
 //     background-repeat: no-repeat;
 //     width: 100%;
@@ -33,10 +40,7 @@ header {
 //     margin-left: auto;
 //     margin-right: auto;
 
-
 //     background-image: url(../images/bg-logo-m.png);
-
-
 
 //     @media screen and (min-width: 768px) {
 //         background-image: url(../images/bg-logo-l.png);
@@ -48,8 +52,6 @@ header {
 
 //     }
 // }
-
-
 
 .logo-icon {
     width: 100px;
@@ -107,13 +109,10 @@ header {
     }
 
     @media screen and (min-width: 1200px) {
-        padding-top: 30px;
+        padding-top: 40px;
         padding-bottom: 0px;
-
     }
 }
-
-
 
 svg text {
     text-transform: uppercase;
@@ -122,8 +121,6 @@ svg text {
     stroke: var(--accent-color);
     font-size: 100px;
     padding-top: 0;
-
-
 
     @media screen and (min-width: 768px) {
         font-size: 50px;
@@ -137,7 +134,6 @@ svg text {
         max-width: 608px;
     }
 }
-
 
 @keyframes stroke {
     0% {
@@ -245,7 +241,6 @@ svg text {
 //     }
 // }
 
-
 //=====================================================2
 
 // .header-title {
@@ -257,7 +252,6 @@ svg text {
 //     // font-family: "Source Sans Pro", sans-serif;
 //     animation:
 //         glow 5000ms linear infinite 2000ms;
-
 
 //     @keyframes glow {
 //         40% {
@@ -338,6 +332,7 @@ svg text {
 
 .search-form {
 
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -351,155 +346,185 @@ svg text {
         gap: 32px
     }
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 24px;
+
+
+    @media screen and (min-width: 768px) {
+        flex-wrap: nowrap;
+        gap: 32px;
+    }
 }
+
 
 
 
 .search-form input {
     min-width: 280px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    color: var(--grey-text-color);
-    border-radius: 20px;
-    padding: 10px 32px;
-    border: none;
-    outline: none;
-    resize: none;
 
-    @media screen and (min-width: 768px) {
-        min-width: 336px;
-        height: 40px;
-    }
-
-    @media screen and (min-width: 1200px) {
-        min-width: 288px;
-        height: 40px;
-    }
-
-}
-
-
-.input-form {
-    position: relative;
-
-}
-
-.search {
-    position: absolute;
-    top: 14px;
-    right: 32px;
-    fill: var(--grey-text-color); // transition: fill .1s linear;
-    align-items: center;
-}
-
-.select {
-    // margin: auto;
-    // min-width: 280px;
-    position: relative;
-
-    &.is-active .select__body {
-        display: block;
-    }
-
-    &__header {
-        display: flex;
-        border: none;
-        border-radius: 20px;
+    .search-form input,
+    .search-form select {
+        width: 280px;
         height: 40px;
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(20px);
         color: var(--grey-text-color);
-        min-width: 280px;
-        height: 40px;
-
-        @media screen and (min-width: 768px) {
-            min-width: 336px;
-            height: 40px;
-        }
-
-        @media screen and (min-width: 1200px) {
-            min-width: 288px;
-            height: 40px;
-        }
-    }
-
-    &__current {
-        font-weight: 400;
-
-        font-size: 16px;
-        line-height: 20px;
+        border-radius: 20px;
         padding: 10px 32px;
-    }
-
-    &__icon {
-        align-items: center;
-        display: flex;
-        flex-shrink: 0;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        margin-left: auto;
-        text-align: center;
-        padding-right: 32px;
-
-        // left: 15px;
-        // fill: var(--title-text-color);
-        // transition-property: fill;
-        // transition-duration: 250ms;
-        // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-        // &:hover {
-        //     color: var(--accent-color)
-        // }
-    }
-
-    &:hover,
-    .select__icon:hover {
-        color: var(--accent-color)
-    }
-
-    &__item {
-        padding: 1px 30px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        cursor: pointer;
-
-        &:hover {
-            background: #DC56C5;
-        }
-    }
-
-    &__body {
-        display: none;
-        // width: 270px;
-        height: 210px;
         border: none;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        padding: 5px 0px;
-        color: #CCCCCC;
-        overflow: auto;
-        margin: 0;
-        min-width: 280px;
+        outline: none;
+        resize: none;
 
-        &::-webkit-scrollbar {
-            display: none;
+        @media screen and (min-width: 768px) {
+            width: 336px;
+
+            height: 40px;
         }
+
 
         @media screen and (min-width: 768px) {
             min-width: 336px;
-
+            height: 40px;
         }
 
         @media screen and (min-width: 1200px) {
             min-width: 288px;
-
+            height: 40px;
         }
+
     }
 
 
+    .input-form {
+        position: relative;
+
+    }
+
+    .search {
+        position: absolute;
+        top: 14px;
+        right: 32px;
+        fill: var(--grey-text-color); // transition: fill .1s linear;
+        align-items: center;
+    }
+
+    .select {
+        // margin: auto;
+        // min-width: 280px;
+        position: relative;
+
+        &.is-active .select__body {
+            display: block;
+        }
+
+        &__header {
+            display: flex;
+            border: none;
+            border-radius: 20px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            color: var(--grey-text-color);
+            min-width: 280px;
+            height: 40px;
+
+            @media screen and (min-width: 768px) {
+                min-width: 336px;
+                height: 40px;
+            }
+
+            @media screen and (min-width: 1200px) {
+                min-width: 288px;
+                height: 40px;
+            }
+        }
+
+        &__current {
+            font-weight: 400;
+
+            font-size: 16px;
+            line-height: 20px;
+            padding: 10px 32px;
+        }
+
+        &__icon {
+            align-items: center;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin-left: auto;
+            text-align: center;
+            padding-right: 32px;
+
+            // left: 15px;
+            // fill: var(--title-text-color);
+            // transition-property: fill;
+            // transition-duration: 250ms;
+            // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+            // &:hover {
+            //     color: var(--accent-color)
+            // }
+        }
+
+        &:hover,
+        .select__icon:hover {
+            color: var(--accent-color)
+        }
+
+        &__item {
+            padding: 1px 30px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background: #DC56C5;
+            }
+        }
+
+        &__body {
+            display: none;
+            // width: 270px;
+            height: 210px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 5px 0px;
+            color: #CCCCCC;
+            overflow: auto;
+            margin: 0;
+            min-width: 280px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            @media screen and (min-width: 768px) {
+                min-width: 336px;
+
+            }
+
+            @media screen and (min-width: 1200px) {
+                min-width: 288px;
+
+            }
+        }
+
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 288px;
+        height: 40px;
+    }
 }
