@@ -1,4 +1,5 @@
 import { fetchEvents, options } from './js/getEventsApi';
+import { coutryCode } from './js/coutryCode';
 import {
   MakeListMarkup,
   fetchQueryEvents,
@@ -10,6 +11,4 @@ import './js/pagination';
 //import './js/armymodal';
 import './js/modal';
 
-// eventLi.addEventListener('click', onEventLiClick);
-
-//fetchEvents().then(({ data }) => makeModalMarkup(data._embedded.events[14]));
+fetchEvents().then(res => MakeListMarkup(res.data._embedded.events));

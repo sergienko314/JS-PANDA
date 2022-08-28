@@ -31,6 +31,4 @@ export function eventSearchByName() {
 
 export function MakeListMarkup(data) {
   list.insertAdjacentHTML('beforeend', EventList(data));
-  const li = document.querySelectorAll('event-item');
-  console.log(li);
 }
