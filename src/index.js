@@ -6,7 +6,7 @@ import {
 } from './js/getEventsApi';
 import debounce from 'lodash.debounce';
 import './js/pagination'
-import './js/armymodal'
+//import './js/armymodal'
 const searchBtn = document.querySelector('[name="startSearch"]');
 
 //fetchEvents().then(({ data }) => console.log(data));
