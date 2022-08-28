@@ -1,3 +1,13 @@
+.header-section {
+  background-repeat: no-repeat;
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/logo-m.png);
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: url(../images/logo-l.png);
+  }
+}
 header {
   z-index: -10;
   background-repeat: no-repeat;

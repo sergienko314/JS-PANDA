@@ -7,7 +7,7 @@ import {
 import { onEventLiClick, makeModalMarkup } from './js/modal';
 import debounce from 'lodash.debounce';
 import './js/pagination';
-import './js/armymodal';
+//import './js/armymodal';
 import './js/modal';
 const searchBtn = document.querySelector('[name="startSearch"]');
 searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
