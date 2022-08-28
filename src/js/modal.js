@@ -3,8 +3,14 @@ const modalDiv = document.querySelector('.modal__markup');
 
 const backdrop = document.querySelector('.backdrop');
 
-export function onEventLiClick() {
-  backdrop.classList.remove('is-hidden');
+export function onEventLiClick(e) {
+  e.preventDefault();
+  id = e.target.parentNode.parentNode.id;
+  //
+  //нужна финкция принимаюшая ИД и возвращающая масив с инфой для Усатого
+  //
+  console.log(id);
+  // backdrop.classList.remove('is-hidden');
 }
 
 export function makeModalMarkup(data) {
