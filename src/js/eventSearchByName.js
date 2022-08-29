@@ -13,29 +13,38 @@ const list = document.querySelector('.js-eventList');
 const selectPanel = document.querySelector('#search-form');
 // 1234124234123523452345234562346
 
-selectPanel.addEventListener('input', throttle(onSearchForm, 500));
-function onSearchForm() {
-  console.log(selectPanel.elements.chooseQuery.value);
-  console.log(selectPanel[0].value);
+selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
+async function onSearchForm() {
+  CountriKAY = selectPanel.elements.chooseQuery.value;
+  serchValue = selectPanel[0].value;
+  options.params.keyword = serchValue;
+  options.params.countryCode = CountriKAY;
+  // console.log(options.params.countryCode);
+  if (options.params.countryCode === 'Choose country') {
+    options.params.countryCode = '';
+  }
+
+  const res = await axios.get(`${BASE_URL}?`, options);
+  list.innerHTML = '';
+  MakeListMarkup(res.data._embedded.events);
 }
 
 // werwertwertewrtwetrywerytwerwergwetrywetrywety
-async function onChangeCountryCode() {
-  try {
-    if (country.value !== '') {
-      options.params.countryCode = country.value;
-    }
-    let countryValue = country.value;
-    console.log(countryValue);
-    options.params.countryCode = `${countryValue}`;
+// async function onChangeCountryCode() {
+//   try {
+//     if (country.value !== '') {
+//       options.params.countryCode = country.value;
+//     }
+//     let countryValue = country.value;
+//     options.params.countryCode = `${countryValue}`;
 
-    const response = await axios.get(`${BASE_URL}?`, options);
-    console.log(response);
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     const response = await axios.get(`${BASE_URL}?`, options);
+//     console.log(response);
+//     return response;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 // export async function fetchQueryEvents() {
 //   const q = searchBtn.value;
