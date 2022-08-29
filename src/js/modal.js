@@ -1,5 +1,6 @@
 import { options, BASE_URL } from './getEventsApi';
 import { fetchEvents } from './getEventsApi';
+import { onSearchForm, MakeListMarkup } from './eventSearchByName';
 import { list } from './eventSearchByName';
 import axios from 'axios';
 import EventItemMarkup from '../templates/EventItemMarkup.hbs';
@@ -23,11 +24,20 @@ export async function onEventLiClick(e) {
 
 export async function fetchEventByAuthor(e) {
   backdrop.classList.toggle('is-hidden');
-  list.innerHTML = '';
+  //list.innerHTML = '';
   const author = document.querySelector('.js-who');
-  options.params.keyword = `${author.textContent}`;
-  const res = fetchEvents();
-  console.log(res);
+  options.params.keyword = author.textContent;
+  console.log(options);
+  console.log(author.textContent);
+  const res = await axios.get(`${BASE_URL}?`, options);
+  try {
+    list.innerHTML = '';
+    MakeListMarkup(res.data._embedded.events);
+    console.log(res.data._embedded.events);
+    res.then(res => console.log(res));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export function makeModalMarkup(data) {
