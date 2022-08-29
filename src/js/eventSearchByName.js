@@ -36,3 +36,7 @@ export async function MakeListMarkup(data) {
   const li = document.querySelector('.event-list');
   await li.addEventListener('click', onEventLiClick);
 }
+
+console.log('12');
+console.log('12');
+console.log('12');
