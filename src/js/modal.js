@@ -14,8 +14,12 @@ export async function onEventLiClick(e) {
   options.params.id = eventId;
   const res = await fetchEventsById();
   makeModalMarkup(res);
-  console.log(res);
+  const authorBtn = document.querySelector('.modal__btn--more');
+  authorBtn.addEventListener('click', fetchEventByAuthor);
+  console.log(authorBtn);
 }
+
+export function fetchEventByAuthor() {}
 
 export function makeModalMarkup(data) {
   modalDiv.innerHTML = '';
