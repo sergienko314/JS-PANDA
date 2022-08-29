@@ -5,7 +5,7 @@ import debounce from 'lodash.debounce';
 import { onEventLiClick } from './modal';
 import { fetchEvents } from './getEventsApi';
 import throttle from 'lodash.throttle';
-
+import errorPanda from '../templates/errorPanda.hbs';
 const list = document.querySelector('.js-eventList');
 // const searchBtn = document.querySelector('[name="startSearch"]');
 // searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
@@ -25,8 +25,13 @@ async function onSearchForm() {
   }
 
   const res = await axios.get(`${BASE_URL}?`, options);
-  list.innerHTML = '';
-  MakeListMarkup(res.data._embedded.events);
+  try {
+    list.innerHTML = '';
+    MakeListMarkup(res.data._embedded.events);
+    console.log(res.data._embedded.events);
+  } catch (error) {
+    return (list.innerHTML = errorPanda());
+  }
 }
 
 // werwertwertewrtwetrywerytwerwergwetrywetrywety
