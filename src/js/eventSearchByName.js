@@ -11,7 +11,7 @@ const country = document.querySelector('[name="сhoose-country"]');
 
 searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
 
-country.addEventListener('change', onChangeCountryCode);
+// country.addEventListener('change', onChangeCountryCode);
 
 async function onChangeCountryCode() {
   try {
