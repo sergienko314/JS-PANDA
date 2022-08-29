@@ -61,7 +61,13 @@ ul {
   z-index: 1;
   top: 16px;
   right: 20px;
-  transition: 0.25s linear;
+  // transition: 0.25s linear;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+
+  &:hover,
+  &:focus {
+    border: 2px solid #4c00fe;
+  }
 }
 
 .icon {
@@ -244,7 +250,6 @@ ul {
   margin-left: auto;
   margin-right: auto;
   margin-top: 8px;
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
