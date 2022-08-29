@@ -1,4 +1,6 @@
 import { options, BASE_URL } from './getEventsApi';
+import { fetchEvents } from './getEventsApi';
+import { list } from './eventSearchByName';
 import axios from 'axios';
 import EventItemMarkup from '../templates/EventItemMarkup.hbs';
 //====================== MODAL
@@ -19,7 +21,14 @@ export async function onEventLiClick(e) {
   console.log(authorBtn);
 }
 
-export function fetchEventByAuthor() {}
+export async function fetchEventByAuthor(e) {
+  backdrop.classList.toggle('is-hidden');
+  list.innerHTML = '';
+  const author = document.querySelector('.js-who');
+  options.params.keyword = `${author.textContent}`;
+  const res = fetchEvents();
+  console.log(res);
+}
 
 export function makeModalMarkup(data) {
   modalDiv.innerHTML = '';

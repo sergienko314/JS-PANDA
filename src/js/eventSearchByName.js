@@ -6,7 +6,7 @@ import { onEventLiClick } from './modal';
 import { fetchEvents } from './getEventsApi';
 import throttle from 'lodash.throttle';
 
-const list = document.querySelector('.js-eventList');
+export const list = document.querySelector('.js-eventList');
 // const searchBtn = document.querySelector('[name="startSearch"]');
 // searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
 
