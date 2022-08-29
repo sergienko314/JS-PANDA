@@ -9,3 +9,32 @@ html {
 *::after {
   box-sizing: border-box;
 }
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  // position: relative;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 320px;
+
+
+  background-image: url(../images/bgr-picture-s.png);
+
+
+  @media screen and (min-width: 768px) {
+
+    background-image: url(../images/bgr-picture-m.png);
+
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    background-image: url(../images/bgr-picture-l.png);
+  }
+}

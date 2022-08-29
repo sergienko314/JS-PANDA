@@ -10,13 +10,116 @@
       <!-- <label> -->
       <div class="modal-wrap">
         <form class="search-form" id="search-form">
-          <input
-            type="text"
-            name="startSearch"
-            placeholder="Start searching"
-            required="required"
-          />
-          <select name="сhoose-country" required="required">
+          <div class="input-form">
+            <input
+              type="text"
+              name="startSearch"
+              placeholder="Start searching"
+              required="required"
+            />
+           
+            <svg class="search"width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.50899 1.50905C2.48211 0.535922 3.77593 0 5.15211 0C6.52829 0 7.82211 0.535922 8.79521 1.50905C9.76831 2.48215 10.3043 3.77597 10.3043 5.15213C10.3043 6.41032 9.85604 7.59949 9.03554 8.53786L11.8969 11.3992C12.0343 11.5366 12.0343 11.7595 11.8969 11.8969C11.8281 11.9656 11.7381 12 11.648 12C11.558 12 11.4679 11.9656 11.3992 11.8969L8.53785 9.03558C7.59948 9.85605 6.41031 10.3043 5.15211 10.3043C3.77591 10.3043 2.48213 9.76838 1.50901 8.79525C0.535907 7.82215 -1.47819e-05 6.52833 -1.47819e-05 5.15215C-1.47819e-05 3.77597 0.535884 2.48215 1.50899 1.50905ZM2.0067 8.29755C3.7411 10.0319 6.56309 10.0319 8.29749 8.29755C10.0319 6.56318 10.0319 3.74114 8.29749 2.00677C7.43021 1.13948 6.29134 0.705984 5.15209 0.705984C4.01312 0.705984 2.87377 1.1397 2.00668 2.00677C0.272352 3.74112 0.272352 6.56316 2.0067 8.29755Z" fill="#939393"/>
+</svg>
+            </svg>
+          </div>
+<div class="select " id="mySelect" name="сhoose-country">
+  <div class="select__header">
+    <span class="select__current" value="">Choose country</span>
+    <div class="select__icon">&#9660;</div>
+</div>
+
+  <div class="select__body">
+   
+            <div class="select__item" value="US">United States Of America</div>
+            <div  class="select__item" value="AD">Andorra</div>
+            <div  class="select__item" value="AI">Anguilla</div>
+            <div  class="select__item" value="AR">Argentina</div>
+            <div  class="select__item" value="AU">Australia</div>
+            <div  class="select__item" value="AT">Austria</div>
+            <div  class="select__item" value="AZ">Azerbaijan</div>
+            <div  class="select__item" value="BS">Bahamas</div>
+            <div  class="select__item" value="BH">Bahrain</div>
+            <div  class="select__item" value="BB">Barbados</div>
+            <div  class="select__item" value="BE">Belgium</div>
+            <div  class="select__item" value="BM">Bermuda</div>
+            <div  class="select__item" value="BR">Brazil</div>
+            <div  class="select__item" value="BG">Bulgaria</div>
+            <div  class="select__item" value="CA">Canada</div>
+            <div  class="select__item" value="CL ">Chile</div>
+            <div  class="select__item" value="CN ">China</div>
+            <div  class="select__item" value="CO ">Colombia</div>
+            <div  class="select__item" value="CR ">Costa Rica</div>
+            <div  class="select__item" value="HR ">Croatia</div>
+            <div  class="select__item" value="CY ">Cyprus</div>
+            <div  class="select__item" value="CZ ">Czech Republic</div>
+            <div  class="select__item" value="DK ">Denmark</div>
+            <div  class="select__item" value="DO ">Dominican Republic</div>
+            <div  class="select__item" value="EC ">Ecuador</div>
+            <div  class="select__item" value="EE ">Estonia</div>
+            <div  class="select__item" value="FO">Faroe Islands</div>
+            <div  class="select__item" value="FI ">Finland</div>
+            <div  class="select__item" value="FR ">France</div>
+            <div  class="select__item" value="GE ">Georgia</div>
+            <div  class="select__item" value="DE ">Germany</div>
+            <div  class="select__item" value="GH ">Ghana</div>
+            <div  class="select__item" value="GI ">Gibraltar</div>
+            <div  class="select__item" value="GB ">Great Britain</div>
+            <div  class="select__item" value="GR ">Greece</div>
+            <div  class="select__item" value="HK ">Hong Kong</div>
+            <div  class="select__item" value="HU ">Hungary</div>
+            <div  class="select__item" value="IS">Iceland</div>
+            <div  class="select__item" value="IN">India</div>
+            <div  class="select__item" value="IE">Ireland</div>
+            <div  class="select__item" value="IL ">Israel</div>
+            <div  class="select__item" value="IT">Italy</div>
+            <div  class="select__item" value="JM ">Jamaica</div>
+            <div  class="select__item" value="JP ">Japan</div>
+            <div  class="select__item" value="KR ">Korea, Republic of</div>
+            <div  class="select__item" value="LV ">Latvia</div>
+            <div  class="select__item" value="LB ">Lebanon</div>
+            <div  class="select__item" value="LT ">Lithuania</div>
+            <div  class="select__item" value="LU ">Luxembourg</div>
+            <div  class="select__item" value="MY ">Malaysia</div>
+            <div  class="select__item" value="MT ">Malta</div>
+            <div  class="select__item" value="MX ">Mexico</div>
+            <div  class="select__item" value="MC ">Monaco</div>
+            <div  class="select__item" value="ME ">Montenegro</div>
+            <div  class="select__item" value="MA ">Morocco</div>
+            <div  class="select__item" value="NL ">Netherlands</div>
+            <div  class="select__item" value="AN ">Netherlands Antilles</div>
+            <div  class="select__item" value="NZ ">New Zealand</div>
+            <div  class="select__item" value="ND ">Northern Ireland</div>
+            <div  class="select__item" value="NO ">Norway</div>
+            <div  class="select__item" value="PE ">Peru</div>
+            <div  class="select__item" value="PL ">Poland</div>
+            <div  class="select__item" value="PT ">Portugal</div>
+            <div  class="select__item" value="RO ">Romania</div>
+            <div  class="select__item" value="RU ">russian federation</div>
+            <div  class="select__item" value="LC ">Saint Lucia</div>
+            <div  class="select__item" value="SA ">Saudi Arabia</div>
+            <div  class="select__item" value="RS ">Serbia</div>
+            <div  class="select__item" value="SG ">Singapore</div>
+            <div  class="select__item" value="SK ">Slovakia</div>
+            <div  class="select__item" value="SI ">Slovenia</div>
+            <div  class="select__item" value="ZA ">South Africa</div>
+            <div  class="select__item" value="ES ">Spain</div>
+            <div  class="select__item" value="SE ">Sweden</div>
+            <div  class="select__item" value="CH ">Switzerland</div>
+            <div  class="select__item" value="TW ">Taiwan</div>
+            <div  class="select__item" value="TH ">Thailand</div>
+            <div  class="select__item" value="TT ">Trinidad and Tobago</div>
+            <div  class="select__item" value="TR ">Turkey</div>
+            <div  class="select__item" value="UA ">Ukraine</div>
+            <div  class="select__item" value="AE ">United Arab Emirates</div>
+            <div  class="select__item" value="UY ">Uruguay</div>
+            <div  class="select__item" value="VE ">Venezuela</div>
+  </div>
+</div>
+
+
+          <!-- <div class="box">
+          <select id="mySelect" name="сhoose-country" required="required">
             <option name="chooseCountry" value="">Choose country</option>
             <option value="US">United States Of America</option>
             <option value="AD">Andorra</option>
@@ -102,8 +205,10 @@
             <option value="UY ">Uruguay</option>
             <option value="VE ">Venezuela</option>
           </select>
+          </div>
         </form>
       </div>
     </div>
   </header>
-</section>
+</section> -->
+
