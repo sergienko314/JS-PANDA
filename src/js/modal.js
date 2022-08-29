@@ -38,6 +38,7 @@ const btnClose = document.querySelector('.modal__btn--close');
 
 btnClose.addEventListener('click', e => {
   backdrop.classList.toggle('is-hidden');
+  modalDiv.innerHTML = '';
 });
 
 document.addEventListener('keydown', function (e) {
