@@ -17,6 +17,7 @@ export async function onEventLiClick(e) {
 }
 
 export function makeModalMarkup(data) {
+  modalDiv.innerHTML = '';
   modalDiv.insertAdjacentHTML('beforeend', EventItemMarkup(data));
 }
 
