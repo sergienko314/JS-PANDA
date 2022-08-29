@@ -9,6 +9,7 @@ const backdrop = document.querySelector('.backdrop');
 export async function onEventLiClick(e) {
   e.preventDefault();
   backdrop.classList.remove('is-hidden');
+  document.body.style.overflow = 'hidden';
   const eventId = e.target.parentNode.parentNode.id;
   options.params.id = eventId;
   const res = await fetchEventsById();
