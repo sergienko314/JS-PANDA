@@ -1,19 +1,25 @@
 import axios from 'axios';
 import { options, BASE_URL } from './getEventsApi';
 import EventList from '../templates/EventListMarkup.hbs';
-
 import debounce from 'lodash.debounce';
 import { onEventLiClick } from './modal';
 import { fetchEvents } from './getEventsApi';
+import throttle from 'lodash.throttle';
 
 const list = document.querySelector('.js-eventList');
-const searchBtn = document.querySelector('[name="startSearch"]');
-const country = document.querySelector('[name="сhoose-country"]');
+// const searchBtn = document.querySelector('[name="startSearch"]');
+// searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
 
-searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
+const selectPanel = document.querySelector('#search-form');
+// 1234124234123523452345234562346
 
-// country.addEventListener('change', onChangeCountryCode);
+selectPanel.addEventListener('input', throttle(onSearchForm, 500));
+function onSearchForm() {
+  console.log(selectPanel.elements.chooseQuery.value);
+  console.log(selectPanel[0].value);
+}
 
+// werwertwertewrtwetrywerytwerwergwetrywetrywety
 async function onChangeCountryCode() {
   try {
     if (country.value !== '') {
@@ -45,53 +51,22 @@ async function onChangeCountryCode() {
 //   }
 // }
 
-export function eventSearchByName() {
-  list.innerHTML = '';
+// export function eventSearchByName() {
+//   list.innerHTML = '';
 
-  fetchQueryEvents().then(res => {
-    if (res.data.page.totalElements === 0) {
-      list.innerHTML = `<p class="no-event">Sorry, no one event find!</p>`;
-      searchBtn.value = '';
-    }
-    MakeListMarkup(res.data._embedded.events);
-    searchBtn.value = '';
-  });
-}
+//   fetchQueryEvents().then(res => {
+//     if (res.data.page.totalElements === 0) {
+//       list.innerHTML = `<p class="no-event">Sorry, no one event find!</p>`;
+//       searchBtn.value = '';
+//     }
+//     MakeListMarkup(res.data._embedded.events);
+//     searchBtn.value = '';
+//   });
+// }
 
-export function MakeListMarkup(data) {
+export async function MakeListMarkup(data) {
   list.insertAdjacentHTML('beforeend', EventList(data));
+
   const li = document.querySelector('.event-list');
-  li.addEventListener('click', onEventLiClick);
+  await li.addEventListener('click', onEventLiClick);
 }
-
-// //====================== MODAL
-
-// const modalDiv = document.querySelector('.modal__markup');
-// const backdrop = document.querySelector('.backdrop');
-
-// export async function onEventLiClick(e) {
-//   e.preventDefault();
-//   backdrop.classList.remove('is-hidden');
-//   const eventId = e.target.parentNode.parentNode.id;
-//   options.params.id = eventId;
-//   const res = await fetchEventsById();
-//   makeModalMarkup(res);
-//   console.log(res);
-// }
-
-// export function makeModalMarkup(data) {
-//   modalDiv.innerHTML = '';
-//   modalDiv.insertAdjacentHTML('beforeend', EventItemMarkup(data));
-// }
-
-// export async function fetchEventsById() {
-//   try {
-//     const response = await axios.get(
-//       `${BASE_URL}/${options.params.id}?`,
-//       options
-//     );
-//     return response;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
