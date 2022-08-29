@@ -17,7 +17,6 @@ export async function onEventLiClick(e) {
 }
 
 export function makeModalMarkup(data) {
-  modalDiv.innerHTML = '';
   modalDiv.insertAdjacentHTML('beforeend', EventItemMarkup(data));
 }
 
@@ -43,5 +42,6 @@ btnClose.addEventListener('click', e => {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     backdrop.classList.add('is-hidden');
+    modalDiv.innerHTML = '';
   }
 });
