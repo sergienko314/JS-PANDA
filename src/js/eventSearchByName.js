@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { options, BASE_URL } from './getEventsApi';
 import EventList from '../templates/EventListMarkup.hbs';
+
 import debounce from 'lodash.debounce';
 import { onEventLiClick } from './modal';
 import { fetchEvents } from './getEventsApi';
@@ -57,9 +58,40 @@ export function eventSearchByName() {
   });
 }
 
-export async function MakeListMarkup(data) {
+export function MakeListMarkup(data) {
   list.insertAdjacentHTML('beforeend', EventList(data));
-
   const li = document.querySelector('.event-list');
-  await li.addEventListener('click', onEventLiClick);
+  li.addEventListener('click', onEventLiClick);
 }
+
+// //====================== MODAL
+
+// const modalDiv = document.querySelector('.modal__markup');
+// const backdrop = document.querySelector('.backdrop');
+
+// export async function onEventLiClick(e) {
+//   e.preventDefault();
+//   backdrop.classList.remove('is-hidden');
+//   const eventId = e.target.parentNode.parentNode.id;
+//   options.params.id = eventId;
+//   const res = await fetchEventsById();
+//   makeModalMarkup(res);
+//   console.log(res);
+// }
+
+// export function makeModalMarkup(data) {
+//   modalDiv.innerHTML = '';
+//   modalDiv.insertAdjacentHTML('beforeend', EventItemMarkup(data));
+// }
+
+// export async function fetchEventsById() {
+//   try {
+//     const response = await axios.get(
+//       `${BASE_URL}/${options.params.id}?`,
+//       options
+//     );
+//     return response;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }

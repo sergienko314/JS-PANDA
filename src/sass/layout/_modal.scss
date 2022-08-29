@@ -10,22 +10,43 @@ ul {
   padding: 0;
 }
 .backdrop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1000;
   background: rgba(32, 13, 29, 0.6);
   backdrop-filter: blur(3px);
 }
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
 .modal {
   position: relative;
   background-color: white;
   overflow: auto;
   width: 280px;
   height: 952px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 150px 0px;
 
   @media screen and (min-width: 768px) {
     width: 704px;
     height: 845px;
+    border-radius: 300px 0px;
   }
   @media screen and (min-width: 1200px) {
     width: 1034px;
@@ -40,6 +61,14 @@ ul {
   z-index: 1;
   top: 16px;
   right: 20px;
+  transition: 0.25s linear;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: #4c00fe;
 }
 
 .modal__img--small {
@@ -68,11 +97,11 @@ ul {
 .modal__positions {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 24px;
+
   @media screen and (min-width: 768px) {
     gap: 32px;
     justify-content: center;
-  }
-  @media screen and (min-width: 1200px) {
     margin-bottom: 40px;
   }
 }
@@ -92,7 +121,16 @@ ul {
   }
 }
 
+.modal__lists {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .modal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   max-width: 243px;
   list-style: none;
   @media screen and (min-width: 768px) {
@@ -100,24 +138,12 @@ ul {
   }
   @media screen and (min-width: 1200px) {
     max-width: 433px;
-  }
-}
-
-.modal__item {
-  margin-bottom: 16px;
-
-  @media screen and (min-width: 1200px) {
-    margin-bottom: 20px;
-
-    &:first-child {
-      margin-bottom: 40px;
-    }
+    gap: 20px;
   }
 }
 
 .modal__info {
   margin-bottom: 5px;
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -140,7 +166,6 @@ ul {
 
 .modal__info--text {
   margin-bottom: 3px;
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -164,7 +189,6 @@ ul {
   margin-bottom: 16px;
   text-align: center;
   color: #0e0e0e;
-  font-family: Montserrat;
   font-size: 16px;
   line-height: 20px;
   font-style: normal;
@@ -186,7 +210,6 @@ ul {
   height: 40px;
   width: 145px;
   font-size: 16px;
-  margin-bottom: 16px;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -200,20 +223,17 @@ ul {
   }
 
   @media screen and (min-width: 1200px) {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     font-size: 18px;
-
-    // &:last-child {
-    //   margin-bottom: 0px;
-    // }
   }
 }
 
 .modal__btn--buy:focus,
 .modal__btn--buy:hover {
   font-size: 18px;
-  color: rgb(255, 255, 0);
-  background: #4005cb;
+  color: #4c00fe;
+  background: #fff;
+  border: 1px solid #4c00fe;
 }
 
 .modal__btn--more {
@@ -243,8 +263,4 @@ ul {
 .modal__btn--more:hover {
   color: #fff2fd;
   background: #4c00fe;
-}
-
-.is-hidden {
-  visibility: hidden;
 }
