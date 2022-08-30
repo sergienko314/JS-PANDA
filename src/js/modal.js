@@ -56,6 +56,5 @@ document.addEventListener('click', function (e) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
     options.params.id = '';
-    console.log(options);
   }
 });
