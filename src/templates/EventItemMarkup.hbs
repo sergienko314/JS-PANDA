@@ -25,8 +25,8 @@
         <p class='modal__info--text'>{{this.data._embedded.venues.0.name}}</p>
       </li>
       <li class='modal__item'>
-        <h2 class='modal__info '>WHO</h2>
-        <p class='modal__info--text js-who'>{{this.data._embedded.attractions.0.name}}</p>
+        <h2 class='modal__info'>WHO</h2>
+        <p class='modal__info--text'>{{this.data.name}}</p>
       </li>
     </ul>
     <ul class='modal__list'>
@@ -34,7 +34,7 @@
       <li class='modal__item'>
         <h2 class='modal__info'>PRICES</h2>
         <p class='modal__info--prices'>Standart {{this.data.priceRanges.0.min}}-{{this.data.priceRanges.0.max}} {{this.data.priceRanges.0.currency}}</p>
-        <a href={{this.data.url}} rel="noreferrer noopener nofollow" target="_blank"><button class='modal__btn--buy'>BUY TICKETS</button></a>
+        <a href={{this.data.url}} rel="noreferrer noopener nofollow"><button class='modal__btn--buy'>BUY TICKETS</button></a>
       </li>
       {{/if}}
       {{!-- <li class='modal__item'>
