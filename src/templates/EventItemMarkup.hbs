@@ -5,42 +5,52 @@
 
     <ul class='modal__list'>
       {{#if this.data.info}}
-      <li class='modal__item'>
-        <h2 class='modal__info'>INFO</h2>
-        <p class='modal__info--text'>
-          {{this.data.info}}
-        </p>
-      </li>
+        <li class='modal__item'>
+          <h2 class='modal__info'>INFO</h2>
+          <p class='modal__info--text'>
+            {{this.data.info}}
+          </p>
+        </li>
       {{/if}}
       {{#if this.data.dates}}
-      <li class='modal__item'>
-        <h2 class='modal__info'>WHEN</h2>
-        <p class='modal__info--text'>{{this.data.dates.start.localDate}}</p>
-        <p class='modal__info--text'>{{this.data.dates.start.localTime}} ({{this.data.dates.timezone}})</p>
-      </li>
+        <li class='modal__item'>
+          <h2 class='modal__info'>WHEN</h2>
+          <p class='modal__info--text'>{{this.data.dates.start.localDate}}</p>
+          <p class='modal__info--text'>{{this.data.dates.start.localTime}}
+            ({{this.data.dates.timezone}})</p>
+        </li>
       {{/if}}
       <li class='modal__item'>
         <h2 class='modal__info'>WHERE</h2>
-        <p class='modal__info--text'>{{this.data._embedded.venues.0.timezone}}</p>
+        <p
+          class='modal__info--text'
+        >{{this.data._embedded.venues.0.timezone}}</p>
         <p class='modal__info--text'>{{this.data._embedded.venues.0.name}}</p>
       </li>
       <li class='modal__item'>
         <h2 class='modal__info'>WHO</h2>
-        <p class='modal__info--text'>{{this.data.name}}</p>
+        <p class='modal__info--text js-who'>{{this.data._embedded.attractions.0.name}}</p>
       </li>
     </ul>
     <ul class='modal__list'>
       {{#if this.data.priceRanges}}
-      <li class='modal__item'>
-        <h2 class='modal__info'>PRICES</h2>
-        <p class='modal__info--prices'>Standart {{this.data.priceRanges.0.min}}-{{this.data.priceRanges.0.max}} {{this.data.priceRanges.0.currency}}</p>
-        <a href={{this.data.url}} rel="noreferrer noopener nofollow"><button class='modal__btn--buy'>BUY TICKETS</button></a>
-      </li>
+        <li class='modal__item'>
+          <h2 class='modal__info'>PRICES</h2>
+          <p class='modal__info--prices'>Standart
+            {{this.data.priceRanges.0.min}}-{{this.data.priceRanges.0.max}}
+            {{this.data.priceRanges.0.currency}}</p>
+          <a
+            href={{this.data.url}}
+            target='_blank'
+            rel='noreferrer noopener nofollow'
+            class='modal__btn--buy'
+          >BUY TICKETS</a>
+        </li>
       {{/if}}
-      {{!-- <li class='modal__item'>
+      {{! <li class='modal__item'>
         <p class='modal__info--prices'>VIP 1000-1500 UAH</p>
         <button class='modal__btn--buy'>BUY TICKETS</button>
-      </li> --}}
+      </li> }}
     </ul>
   </div>
 </div>
