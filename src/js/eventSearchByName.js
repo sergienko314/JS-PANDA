@@ -65,10 +65,6 @@ export async function MakeListMarkup(data) {
   //DLM<<
 }
 
-console.log('12');
-console.log('12');
-console.log('12');
-
 //DLM>>
 //Визначення поточної сторінки
 function setCurrentPage(e) {
