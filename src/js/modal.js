@@ -1,13 +1,17 @@
 import { options, BASE_URL } from './getEventsApi';
 import { fetchEvents } from './getEventsApi';
-import { onSearchForm, MakeListMarkup } from './eventSearchByName';
-import { list } from './eventSearchByName';
+import {
+  onSearchForm,
+  MakeListMarkup,
+  searchEvents,
+} from './eventSearchByName';
 import axios from 'axios';
 import EventItemMarkup from '../templates/EventItemMarkup.hbs';
 //====================== MODAL
 
 const modalDiv = document.querySelector('.modal__markup');
 const backdrop = document.querySelector('.backdrop');
+const list = document.querySelector('.js-eventList');
 
 export async function onEventLiClick(e) {
   e.preventDefault();
@@ -19,24 +23,13 @@ export async function onEventLiClick(e) {
   makeModalMarkup(res);
   const authorBtn = document.querySelector('.modal__btn--more');
   authorBtn.addEventListener('click', fetchEventByAuthor);
-  console.log(authorBtn);
 }
 
 export async function fetchEventByAuthor(e) {
   backdrop.classList.toggle('is-hidden');
   document.body.style.overflow = 'auto';
-  //list.innerHTML = '';
   const author = document.querySelector('.js-who');
   options.params.keyword = author.textContent;
-
-  try {
-    list.innerHTML = '';
-    fetchEvents();
-
-    MakeListMarkup();
-  } catch (error) {
-    console.log(error);
-  }
 }
 
 export function makeModalMarkup(data) {
