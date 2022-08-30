@@ -1,3 +1,5 @@
+import  './js/preloader'
+
 import { fetchEvents, options } from './js/getEventsApi';
 import {
   MakeListMarkup,
