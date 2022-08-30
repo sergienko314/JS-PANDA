@@ -24,17 +24,16 @@ export async function onEventLiClick(e) {
 
 export async function fetchEventByAuthor(e) {
   backdrop.classList.toggle('is-hidden');
+  document.body.style.overflow = 'auto';
   //list.innerHTML = '';
   const author = document.querySelector('.js-who');
   options.params.keyword = author.textContent;
-  console.log(options);
-  console.log(author.textContent);
-  const res = await axios.get(`${BASE_URL}?`, options);
+
   try {
     list.innerHTML = '';
-    MakeListMarkup(res.data._embedded.events);
-    console.log(res.data._embedded.events);
-    res.then(res => console.log(res));
+    fetchEvents();
+
+    MakeListMarkup();
   } catch (error) {
     console.log(error);
   }
