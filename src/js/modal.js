@@ -40,12 +40,14 @@ const btnClose = document.querySelector('.modal__btn--close');
 btnClose.addEventListener('click', e => {
   backdrop.classList.toggle('is-hidden');
   document.body.style.overflow = 'visible';
+  options.params.id = '';
 });
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
+    options.params.id = '';
   }
 });
 
@@ -53,5 +55,6 @@ document.addEventListener('click', function (e) {
   if (e.target === backdrop) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
+    options.params.id = '';
   }
 });
