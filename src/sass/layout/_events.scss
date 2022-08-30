@@ -65,9 +65,19 @@
   color: #ffffff;
 }
 
-.no-event{
+.no-event {
   font-size: 30px;
   color: #fff;
   display: flex;
   justify-content: center;
+}
+
+.error_panda {
+  background-image: url(/src/images/errorSearch.png);
+  width: 100vw;
+  max-height: 100%;
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

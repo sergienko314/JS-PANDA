@@ -1,8 +1,8 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: black;
+  min-width: 100vw, 100vw;
   background-size: contain;
-  background-repeat: no-repeat;
   background-image: url('/src/images/hero-sm_x1.jpeg'),
     url('/src/images/allBg-sm_x1.jpeg');
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
     background-image: url('/src/images/hero-md_x1.jpeg'),
       url('/src/images/allBg-md_x1.jpeg');
 
-    background-position: top 0px center, top 364px center, top 0px center;
+    background-position: top 0px center, top 364px center;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -33,7 +33,7 @@ body {
 
   @media screen and (min-width: 1280px) {
     background-image: url('/src/images/hero-lg_x1.jpeg'),
-      url('/src/images/allBg-lg_x1.jpeg'), url('/src/images/decor-bg_lg.png');
+      url('/src/images/allBg-lg_x1.jpeg');
 
     background-position: top 0px center, top 446px center;
 

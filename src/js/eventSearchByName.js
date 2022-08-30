@@ -5,64 +5,30 @@ import debounce from 'lodash.debounce';
 import { onEventLiClick } from './modal';
 import { fetchEvents } from './getEventsApi';
 import throttle from 'lodash.throttle';
-
+import errorPanda from '../templates/errorPanda.hbs';
 const list = document.querySelector('.js-eventList');
-// const searchBtn = document.querySelector('[name="startSearch"]');
-// searchBtn.addEventListener('input', debounce(eventSearchByName, 500));
 
 const selectPanel = document.querySelector('#search-form');
-// 1234124234123523452345234562346
 
-selectPanel.addEventListener('input', throttle(onSearchForm, 500));
-function onSearchForm() {
-  console.log(selectPanel.elements.chooseQuery.value);
-  console.log(selectPanel[0].value);
-}
+selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
+async function onSearchForm() {
+  CountriKAY = selectPanel.elements.chooseQuery.value;
+  serchValue = selectPanel[0].value;
+  options.params.keyword = serchValue;
+  options.params.countryCode = CountriKAY;
+  if (options.params.countryCode === 'Choose country') {
+    options.params.countryCode = '';
+  }
 
-// werwertwertewrtwetrywerytwerwergwetrywetrywety
-async function onChangeCountryCode() {
+  const res = await axios.get(`${BASE_URL}?`, options);
   try {
-    if (country.value !== '') {
-      options.params.countryCode = country.value;
-    }
-    let countryValue = country.value;
-    console.log(countryValue);
-    options.params.countryCode = `${countryValue}`;
-
-    const response = await axios.get(`${BASE_URL}?`, options);
-    console.log(response);
-    return response;
+    list.innerHTML = '';
+    MakeListMarkup(res.data._embedded.events);
+    console.log(res.data._embedded.events);
   } catch (error) {
-    console.log(error);
+    return (list.innerHTML = errorPanda());
   }
 }
-
-// export async function fetchQueryEvents() {
-//   const q = searchBtn.value;
-//   try {
-//     if (country.value !== '') {
-//       options.params.countryCode = country.value;
-//     }
-//     options.params.keyword = `${q}`;
-//     const response = await axios.get(`${BASE_URL}?`, options);
-//     return response;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// export function eventSearchByName() {
-//   list.innerHTML = '';
-
-//   fetchQueryEvents().then(res => {
-//     if (res.data.page.totalElements === 0) {
-//       list.innerHTML = `<p class="no-event">Sorry, no one event find!</p>`;
-//       searchBtn.value = '';
-//     }
-//     MakeListMarkup(res.data._embedded.events);
-//     searchBtn.value = '';
-//   });
-// }
 
 export async function MakeListMarkup(data) {
   list.insertAdjacentHTML('beforeend', EventList(data));
@@ -70,3 +36,7 @@ export async function MakeListMarkup(data) {
   const li = document.querySelector('.event-list');
   await li.addEventListener('click', onEventLiClick);
 }
+
+console.log('12');
+console.log('12');
+console.log('12');
