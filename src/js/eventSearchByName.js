@@ -21,7 +21,7 @@ let searchBox = '';
 //DLM<<
 
 selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
-async function onSearchForm() {
+export async function onSearchForm() {
   CountriKAY = selectPanel.elements.chooseQuery.value;
   serchValue = selectPanel[0].value;
   options.params.keyword = serchValue;

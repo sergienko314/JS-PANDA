@@ -1,4 +1,7 @@
 import { options, BASE_URL } from './getEventsApi';
+import { fetchEvents } from './getEventsApi';
+import { onSearchForm, MakeListMarkup } from './eventSearchByName';
+import { list } from './eventSearchByName';
 import axios from 'axios';
 import EventItemMarkup from '../templates/EventItemMarkup.hbs';
 //====================== MODAL
@@ -14,7 +17,26 @@ export async function onEventLiClick(e) {
   options.params.id = eventId;
   const res = await fetchEventsById();
   makeModalMarkup(res);
-  console.log(res);
+  const authorBtn = document.querySelector('.modal__btn--more');
+  authorBtn.addEventListener('click', fetchEventByAuthor);
+  console.log(authorBtn);
+}
+
+export async function fetchEventByAuthor(e) {
+  backdrop.classList.toggle('is-hidden');
+  document.body.style.overflow = 'auto';
+  //list.innerHTML = '';
+  const author = document.querySelector('.js-who');
+  options.params.keyword = author.textContent;
+
+  try {
+    list.innerHTML = '';
+    fetchEvents();
+
+    MakeListMarkup();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export function makeModalMarkup(data) {
@@ -39,12 +61,14 @@ const btnClose = document.querySelector('.modal__btn--close');
 
 btnClose.addEventListener('click', e => {
   backdrop.classList.toggle('is-hidden');
+  document.body.style.overflow = 'auto';
   modalDiv.innerHTML = '';
 });
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     backdrop.classList.add('is-hidden');
+    document.body.style.overflow = 'auto';
     modalDiv.innerHTML = '';
   }
 });
