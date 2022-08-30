@@ -6,21 +6,19 @@ import { onEventLiClick } from './modal';
 import { fetchEvents } from './getEventsApi';
 import throttle from 'lodash.throttle';
 import errorPanda from '../templates/errorPanda.hbs';
-const list = document.querySelector('.js-eventList');
-
-const selectPanel = document.querySelector('#search-form');
-//DLM>>
 import { createPagination } from './pagination.js';
-
+const list = document.querySelector('.js-eventList');
 const pagination = document.querySelector('.pagination');
-
+const selectPanel = document.querySelector('#search-form');
 let currentPage = 1;
 let totalPage = '';
 let recurcycall = 0;
 let searchBox = '';
 //DLM<<
-
+const select = document.querySelector('.search__select');
+select.addEventListener('change', onSearchForm);
 selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
+
 async function onSearchForm() {
   CountriKAY = selectPanel.elements.chooseQuery.value;
   serchValue = selectPanel[0].value;
