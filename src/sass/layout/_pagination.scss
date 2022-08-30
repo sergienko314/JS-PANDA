@@ -6,15 +6,12 @@
   list-style: none;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
 };
 
-
-.dots {
+.dot {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;  
 };
 
 .page {
@@ -22,7 +19,6 @@
   justify-content: space-between;
   padding: 5px 12px 5px 12px;
   cursor: pointer;
-  color: #fff;  
   &:hover {
     border: 1px solid #DC56C5;
     color: #DC56C5;
