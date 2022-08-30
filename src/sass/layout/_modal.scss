@@ -40,16 +40,17 @@ ul {
   background-color: white;
   overflow: auto;
   width: 280px;
-  height: 952px;
+  min-height: 952px;
   border-radius: 150px 0px;
+  overflow-y: scroll;
 
   @media screen and (min-width: 768px) {
     width: 704px;
-    height: 845px;
+    min-height: 845px;
     border-radius: 300px 0px;
   }
   @media screen and (min-width: 1200px) {
-    width: 1034px;
+    min-width: 1034px;
     height: 1010px;
   }
 }
@@ -61,13 +62,7 @@ ul {
   z-index: 1;
   top: 16px;
   right: 20px;
-  // transition: 0.25s linear;
-  transition: width 2s, height 2s, background-color 2s, transform 2s;
-
-  &:hover,
-  &:focus {
-    border: 2px solid #4c00fe;
-  }
+  transition: 0.25s linear;
 }
 
 .icon {
@@ -250,6 +245,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   margin-top: 8px;
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
