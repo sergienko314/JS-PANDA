@@ -82,7 +82,7 @@ function setCurrentPage(e) {
 }
 
 //Пошук івенту за ключовим словом для підключення пагінації.
-const searchEvents = async () => {
+export const searchEvents = async () => {
   recurcycall++;
   try {
     console.log('countryCode ' + selectPanel.elements.chooseQuery.value);
