@@ -145,12 +145,19 @@ svg text {
     height: 40px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    color: var(--grey-text-color);
+
     border-radius: 20px;
     padding: 10px 32px;
     border: none;
     outline: none;
     resize: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    :placeholder {
+        color: var(--options-text-color);
+    }
 
     @media screen and (min-width: 768px) {
         min-width: 336px;
@@ -284,8 +291,38 @@ svg text {
 
 
 .custom-select-panel {
-    // display: none;
-    // position: relative;
+    display: none;
+    height: 210px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 5px 0px;
+    color: var(--options-text-color);
+    overflow: auto;
+    margin: 0;
+    min-width: 280px;
+    // padding-top: 20px;
+    margin-top: 2px;
+
+    &::-webkit-scrollbar {
+        display: none;
+
+    }
+}
+
+.custom-select-container.is-open .custom-select-panel {
+    display: block;
+}
+
+select {
+    display: none;
+}
+
+.custom-select-container {
+
+    position: relative;
     border: none;
     border-radius: 20px;
     height: 40px;
@@ -294,21 +331,20 @@ svg text {
     color: var(--grey-text-color);
     width: 280px;
     height: 40px;
+
 }
 
-select {
-    display: none;
-}
-
-.custom-select-container {
-    // padding-top: 50px;
-    position: relative;
+.is-open {
+    display: block;
 }
 
 .custom-select-opener {
-    // position: absolute;
+    display: block;
+    text-align: center;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    padding-left: 32px;
 }
 
 .custom-select-option {
@@ -318,29 +354,37 @@ select {
     font-size: 16px;
     line-height: 20px;
     cursor: pointer;
+    color: var(--options-text-color);
 
 
     &:hover {
-        background: #DC56C5;
-        color: white;
+        background: var(--accent-color);
+        color: var(--title-text-color)
     }
 }
 
-.select__body {
-    height: 210px;
-    border: none;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 5px 0px;
-    color: #CCCCCC;
-    overflow: auto;
-    margin: 0;
-    min-width: 280px;
-    padding-top: 20px;
+// .select__body {
+//     height: 210px;
+//     border: none;
+//     border-radius: 20px;
+//     background: rgba(255, 255, 255, 0.2);
+//     backdrop-filter: blur(20px);
+//     border-radius: 20px;
+//     padding: 5px 0px;
+//     color: var(--options-text-color);
+//     overflow: auto;
+//     margin: 0;
+//     min-width: 280px;
+//     padding-top: 20px;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+//     &::-webkit-scrollbar {
+//         display: none;
+//     }
+// }
+
+input[type=text]:focus {
+    border-color: #777;
+    color: #000;
+    background: #fff;
+    outline: 0
 }
