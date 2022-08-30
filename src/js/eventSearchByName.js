@@ -19,7 +19,7 @@ const select = document.querySelector('.search__select');
 select.addEventListener('change', onSearchForm);
 selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
 
-async function onSearchForm() {
+export async function onSearchForm() {
   CountriKAY = selectPanel.elements.chooseQuery.value;
   serchValue = selectPanel[0].value;
   options.params.keyword = serchValue;
@@ -76,7 +76,7 @@ function setCurrentPage(e) {
 }
 
 //Пошук івенту за ключовим словом для підключення пагінації.
-const searchEvents = async () => {
+export const searchEvents = async () => {
   recurcycall++;
   try {
     console.log('countryCode ' + selectPanel.elements.chooseQuery.value);
