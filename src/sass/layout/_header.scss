@@ -1,31 +1,77 @@
-.header-section {
-    background-repeat: no-repeat;
+// .header-section {
+//     background-repeat: no-repeat;
+//     height: 364px;
+
+//     @media screen and (min-width: 768px) {
+//         background-image: url(../images/logo-m.png);
+//     }
+
+//     @media screen and (min-width: 1200px) {
+//         background-image: url(../images/logo-l.png);
+//     }
+// }
+
+// header {
+
+//     z-index: -10;
+//     background-repeat: no-repeat;
+//     background-position: left top;
+
+//     background-image: url(../images/logo-s.png);
+
+//     @media screen and (min-width: 768px) {
+//         background-image: url(../images/logo-m.png);
+//     }
+
+//     @media screen and (min-width: 1200px) {
+//         background-image: url(../images/logo-l.png);
+//     }
+// }
+
+
+.logo {
+
+    margin: 20px 0 0 20px;
+    width: 70px;
+    fill: white;
+    left: 0;
 
     @media screen and (min-width: 768px) {
-        background-image: url(../images/logo-m.png);
+        width: 100px;
+        margin: 23px 0 0 32px;
     }
 
     @media screen and (min-width: 1200px) {
-        background-image: url(../images/logo-l.png);
+        width: 140px;
+        margin: 41px 0 0 16px;
     }
 }
 
-header {
+.row {
+    position: absolute;
+    width: 107px;
+    height: 90px;
+    border-radius: 0 0 107px 0;
+    background: linear-gradient(136.07deg, rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0) 92.33%);
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 5px 5px var(--accent-color);
 
-    z-index: -10;
-    background-repeat: no-repeat;
-    background-position: left top;
-
-    background-image: url(../images/logo-s.png);
 
     @media screen and (min-width: 768px) {
-        background-image: url(../images/logo-m.png);
+        width: 180px;
+        height: 150px;
+        border-radius: 0 0 180px 0;
     }
 
     @media screen and (min-width: 1200px) {
-        background-image: url(../images/logo-l.png);
+        width: 230px;
+        height: 193px;
+        border-radius: 0 0 230px 0;
     }
+
 }
+
+
 
 // body {
 //     object-fit: cover;
@@ -157,6 +203,8 @@ svg text {
     font-size: 16px;
     line-height: 20px;
     color: var(--grey-text-color);
+    transition: 1s;
+    cursor: pointer;
 
 
     :placeholder {
@@ -200,7 +248,7 @@ svg text {
 
 
 .custom-select-panel {
-    display: none;
+    // display: none;
     height: 210px;
     border: none;
     border-radius: 20px;
@@ -213,6 +261,18 @@ svg text {
     margin: 0;
     min-width: 280px;
     margin-top: 2px;
+    transition: 0.5s;
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+    // overflow: hidden;
+    // visibility: hidden;
+    transition: 0.3s linear;
+    opacity: 0;
+    transform-origin: top center;
+
+    &:hover {
+        box-shadow: 0px 0px 5px 5px var(--accent-color);
+    }
 
     &::-webkit-scrollbar {
         display: none;
@@ -220,8 +280,16 @@ svg text {
     }
 }
 
+.custom-select-container.is-open {
+    box-shadow: 0px 0px 5px 5px var(--accent-color);
+}
+
 .custom-select-container.is-open .custom-select-panel {
-    display: block;
+    // display: block;
+    transform: translateY(0%);
+    // visibility: visible;
+    opacity: 1;
+
 }
 
 select {
@@ -239,6 +307,11 @@ select {
     color: var(--grey-text-color);
     min-width: 280px;
     height: 40px;
+    transition: 1s;
+    cursor: pointer;
+
+
+
 
     @media screen and (min-width: 768px) {
         min-width: 336px;
@@ -263,24 +336,31 @@ select {
 .custom-select-opener {
     display: block;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+    padding: 10px 32px;
     display: flex;
-    padding-left: 32px;
+
+    justify-content: space-between;
+
+    &:after {
+        right: 0;
+        content: '\25BC';
+    }
 }
 
 .custom-select-option {
-
-    padding: 1px 30px;
+    padding: 0.5px 30px;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     cursor: pointer;
     color: var(--options-text-color);
-
+    transition: 0.3s;
+    padding-right: 20px;
 
     &:hover {
         background: var(--accent-color);
-        color: var(--title-text-color)
+        color: var(--title-text-color);
+        box-shadow: 0px 0px 5px 5px var(--accent-color);
     }
 }
