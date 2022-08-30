@@ -2,6 +2,7 @@
   padding-top: 120px;
 }
 .event-list {
+  max-width: 280px;
   margin: 0px auto;
   padding: 0;
   display: flex;
@@ -9,34 +10,82 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1248px;
+  }
 }
 
 .event-item {
-  border: 1px solid wheat;
-  padding: 19px;
-  max-width: 100%;
+  position: relative;
+  padding-top: 9px;
+  padding-right: 10px;
+  // max-width: 100%;
+  width: 130px;
+  min-height: 230px;
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    width: 152px;
+    min-height: 269px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 288px;
+    min-height: 437px;
+  }
+}
+
+.event-item::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 103px;
+  height: 95px;
+  border: 1px solid rgba(220, 86, 197, 0.3);
+  box-sizing: border-box;
+  border-radius: 50px 0;
+  z-index: -1;
+
+  @media screen and (min-width: 768px) {
+    width: 120px;
+    height: 112px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 227px;
+    height: 212px;
+  }
 }
 
 .event-item__info {
   @media screen and (min-width: 768px) {
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     gap: 8px;
   }
 }
 
 .event-item__img {
-  width: 300px;
-  height: 230px;
+  width: 120px;
+  height: 151px;
   object-fit: cover;
+  border-radius: 50px 0px;
 
   @media screen and (min-width: 768px) {
-    width: 300px;
-    height: 230px;
+    width: 141px;
+    height: 178px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 267px;
     height: 337px;
   }
@@ -46,23 +95,47 @@
   max-width: 267px;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.21;
 
   text-align: center;
 
   color: #dc56c5;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 }
 
 .info-item__date {
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.21;
 
   text-align: center;
 
   color: #ffffff;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.info-item__location {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.21;
+  }
 }
 
 .no-event {
