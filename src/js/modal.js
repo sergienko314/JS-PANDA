@@ -11,13 +11,17 @@ const list = document.querySelector('.js-eventList');
 
 export async function onEventLiClick(e) {
   e.preventDefault();
-  backdrop.classList.remove('is-hidden');
-  document.body.style.overflow = 'hidden';
-  const eventId = e.target.parentNode.parentNode.id;
-  options.params.id = eventId;
-  const res = await fetchEventsById();
-  makeModalMarkup(res);
-  console.log(res);
+  const ul = e.target.closest('ul');
+  if (e.target !== ul) {
+    backdrop.classList.remove('is-hidden');
+    document.body.style.overflow = 'hidden';
+    const eventId = e.target.parentNode.parentNode.id;
+    options.params.id = eventId;
+    const res = await fetchEventsById();
+    makeModalMarkup(res);
+  } else {
+    return;
+  }
 }
 
 export function makeModalMarkup(data) {
