@@ -11,7 +11,6 @@
 }
 
 header {
-
   z-index: -10;
   background-repeat: no-repeat;
   background-position: left top;
@@ -141,71 +140,44 @@ svg text {
 }
 
 .search-form input {
+  min-width: 280px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
 
+  border-radius: 20px;
+  padding: 10px 32px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--grey-text-color);
 
-    min-width: 280px;
+  :placeholder {
+    color: var(--options-text-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    min-width: 336px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
+  }
 
-    border-radius: 20px;
-    padding: 10px 32px;
-    border: none;
-    outline: none;
-    resize: none;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color: var(--grey-text-color);
-
-
-    :placeholder {
-        color: var(--options-text-color);
-    }
-
-    @media screen and (min-width: 768px) {
-        min-width: 336px;
-        height: 40px;
-    }
-
-    @media screen and (min-width: 1200px) {
-        min-width: 288px;
-        height: 40px;
-    }
-
+  @media screen and (min-width: 1200px) {
+    min-width: 288px;
+    height: 40px;
+  }
 }
-
 
 .search-form input:hover,
 .search-form input:focus {
-
-    // background: var(--options-text-color);
-    // background: rgba(255, 255, 255, 0.2);
-    // backdrop-filter: blur(20px);
-    // color: var(--grey-text-color);
-    // box-shadow: 0px 0px 5px 5px var(--accent-color)
-    animation: steam 20s linear infinite;
-    left: -2px;
-    top: -2px;
-    background: linear-gradient(50deg, #fb0094, #fb0094, #0000ff, #fb0094, #0000ff, #fff, #fb0094,
-            #0000ff, #fb0094, #fb0094, );
-    background-size: 400%;
+  background: var(--options-text-color);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  color: var(--grey-text-color);
+  box-shadow: 0px 0px 5px 5px var(--accent-color);
 }
-
-@keyframes steam {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 200% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
-
 
 .input-form {
   position: relative;
@@ -219,10 +191,36 @@ svg text {
   align-items: center;
 }
 
-
 .custom-select-panel {
-  // display: none;
-  // position: relative;
+  display: none;
+  height: 210px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 5px 0px;
+  color: var(--options-text-color);
+  overflow: auto;
+  margin: 0;
+  min-width: 280px;
+  margin-top: 2px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.custom-select-container.is-open .custom-select-panel {
+  display: block;
+}
+
+select {
+  display: none;
+}
+
+.custom-select-container {
+  position: relative;
   border: none;
   border-radius: 20px;
   height: 40px;
@@ -231,66 +229,46 @@ svg text {
   color: var(--grey-text-color);
   width: 280px;
   height: 40px;
-}
 
-select {
-  display: none;
-}
-
-.custom-select-container {
-
-
-    position: relative;
-    border: none;
-    border-radius: 20px;
+  @media screen and (min-width: 768px) {
+    min-width: 336px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    color: var(--grey-text-color);
-    width: 280px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-width: 288px;
     height: 40px;
+  }
 
-    @media screen and (min-width: 768px) {
-        min-width: 336px;
-        height: 40px;
-    }
-
-    @media screen and (min-width: 1200px) {
-        min-width: 288px;
-        height: 40px;
-    }
-
-    &:hover,
-    &:focus {
-        box-shadow: 0px 0px 5px 5px var(--accent-color)
-    }
+  &:hover,
+  &:focus {
+    box-shadow: 0px 0px 5px 5px var(--accent-color);
+  }
 }
 
 .is-open {
-    display: block;
-
-
+  display: block;
 }
 
 .custom-select-opener {
-  // position: absolute;
+  display: block;
+  text-align: center;
   padding-top: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  padding-left: 32px;
 }
 
 .custom-select-option {
+  padding: 1px 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  color: var(--options-text-color);
 
-
-    padding: 1px 30px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    cursor: pointer;
-    color: var(--options-text-color);
-
-
-    &:hover {
-        background: var(--accent-color);
-        color: var(--title-text-color)
-    }
+  &:hover {
+    background: var(--accent-color);
+    color: var(--title-text-color);
+  }
 }
