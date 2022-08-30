@@ -346,13 +346,10 @@ select {
         right: 0;
         content: '\25BC';
     }
-
-
 }
 
 .custom-select-option {
-
-    padding: 1px 30px;
+    padding: 0.5px 30px;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
@@ -360,8 +357,6 @@ select {
     color: var(--options-text-color);
     transition: 0.3s;
     padding-right: 20px;
-
-
 
     &:hover {
         background: var(--accent-color);
