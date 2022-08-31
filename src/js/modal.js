@@ -15,7 +15,7 @@ const modal = document.querySelector('.modal');
 export async function onEventLiClick(e) {
   e.preventDefault();
   const ul = e.target.closest('ul');
-  if (e.target !== ul) {
+  if (e.target !== ul && e.target.nodeName !== 'A') {
     backdrop.classList.remove('is-hidden');
     modal.classList.add('bounce-in-top');
     document.body.style.overflow = 'hidden';
