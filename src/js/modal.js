@@ -15,6 +15,10 @@ const modal = document.querySelector('.modal');
 export async function onEventLiClick(e) {
   e.preventDefault();
   const ul = e.target.closest('ul');
+  if (e.target.nodeName === 'A') {
+    let location = e.target.textContent;
+    return window.open(`https://www.google.com.ua/maps/place/${location}`);
+  }
   if (e.target !== ul && e.target.nodeName !== 'A') {
     backdrop.classList.remove('is-hidden');
     modal.classList.add('bounce-in-top');
