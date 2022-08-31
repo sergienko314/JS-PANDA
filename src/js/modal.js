@@ -1,9 +1,11 @@
 import { options, BASE_URL } from './getEventsApi';
 import { fetchEvents } from './getEventsApi';
-import { MakeListMarkup } from './eventSearchByName';
+import { MakeListMarkup, pages, searchEvents } from './eventSearchByName';
 import axios from 'axios';
 import EventItemMarkup from '../templates/EventItemMarkup.hbs';
+import './eventSearchByName';
 //====================== MODAL
+const selectPanel = document.querySelector('#search-form'); //DLM
 
 const modalDiv = document.querySelector('.modal__markup');
 const backdrop = document.querySelector('.backdrop');
@@ -41,12 +43,25 @@ export async function onAuthorClick(e) {
   options.params.id = '';
   const who = document.querySelector('.js-who').textContent;
   options.params.keyword = who;
+  selectPanel[0].value = who; ///DLM
   try {
     const res = await axios.get(`${BASE_URL}.json?`, options);
     console.log(res.data._embedded.events);
     console.log(options);
+    //DLM>>
+    pages.params.currentPage = 1;
+    pages.params.recurcycall = 0;
+    if (res.data.page.totalElements >= 994) {
+      pages.params.totalPage = Math.ceil(994 / 20);
+    } else {
+      pages.params.totalPage = Math.ceil(res.data.page.totalElements / 20);
+    }
+    //DLM<<
+
     MakeListMarkup(res.data._embedded.events);
   } catch (error) {
+    pages.params.currentPage = 1; //DLM
+    searchEvents(); //DLM
     console.error(error);
   }
 }
