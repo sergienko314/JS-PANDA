@@ -16,7 +16,7 @@ export async function onEventLiClick(e) {
   e.preventDefault();
   const ul = e.target.closest('ul');
   if (e.target.nodeName === 'A') {
-    let location = e.target.textContent;
+    let location = e.target.textContent.trim();
     return window.open(`https://www.google.com.ua/maps/place/${location}`);
   }
   if (e.target !== ul && e.target.nodeName !== 'A') {
@@ -26,6 +26,7 @@ export async function onEventLiClick(e) {
     const eventId = e.target.parentNode.parentNode.id;
     options.params.id = eventId;
     const res = await fetchEventsById();
+    res.data.images = res.data.images.sort((b, a) => a.width - b.width);
     makeModalMarkup(res);
   } else {
     return;
@@ -60,7 +61,13 @@ export async function onAuthorClick(e) {
     }
     //DLM<<
 
-    MakeListMarkup(res.data._embedded.events);
+    MakeListMarkup(
+      res.data._embedded.events.map(event => {
+        console.log(event);
+        event.images = event.images.sort((a, b) => b.width - a.width);
+        return event;
+      })
+    );
   } catch (error) {
     pages.params.currentPage = 1; //DLM
     searchEvents(); //DLM
