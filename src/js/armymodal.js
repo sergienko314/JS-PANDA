@@ -1,4 +1,4 @@
-const PROMPT_DELAY = 300;
+const PROMPT_DELAY = 3000;
 const MAX_PROMPT_ATTEMPTS = 1;
 let promptCounter = 0;
 
