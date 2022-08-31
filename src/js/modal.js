@@ -46,8 +46,6 @@ export async function onAuthorClick(e) {
   selectPanel[0].value = who; ///DLM
   try {
     const res = await axios.get(`${BASE_URL}.json?`, options);
-    console.log(res.data._embedded.events);
-    console.log(options);
     //DLM>>
     pages.params.currentPage = 1;
     pages.params.recurcycall = 0;
