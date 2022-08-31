@@ -6,7 +6,7 @@
 //         background-image: url(../images/logo-m.png);
 //     }
 
-//     @media screen and (min-width: 1280px) {
+//     @media screen and (min-width: 1200px) {
 //         background-image: url(../images/logo-l.png);
 //     }
 // }
@@ -23,12 +23,14 @@
 //         background-image: url(../images/logo-m.png);
 //     }
 
-//     @media screen and (min-width: 1280px) {
+//     @media screen and (min-width: 1200px) {
 //         background-image: url(../images/logo-l.png);
 //     }
 // }
 
+
 .logo {
+
   margin: 20px 0 0 20px;
   width: 70px;
   fill: white;
@@ -39,7 +41,7 @@
     margin: 23px 0 0 32px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     width: 140px;
     margin: 41px 0 0 16px;
   }
@@ -50,13 +52,10 @@
   width: 107px;
   height: 90px;
   border-radius: 0 0 107px 0;
-  background: linear-gradient(
-    136.07deg,
-    rgba(196, 196, 196, 0.03) 10.75%,
-    rgba(196, 196, 196, 0) 92.33%
-  );
+  background: linear-gradient(136.07deg, rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0) 92.33%);
   backdrop-filter: blur(30px);
   box-shadow: 0px 0px 5px 5px var(--accent-color);
+
 
   @media screen and (min-width: 768px) {
     width: 180px;
@@ -64,12 +63,15 @@
     border-radius: 0 0 180px 0;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     width: 230px;
     height: 193px;
     border-radius: 0 0 230px 0;
   }
+
 }
+
+
 
 // body {
 //     object-fit: cover;
@@ -92,7 +94,7 @@
 
 //     }
 
-//     @media screen and (min-width: 1280px) {
+//     @media screen and (min-width: 1200px) {
 //         background-image: url(../images/logo-l.png);
 
 //     }
@@ -113,7 +115,7 @@
     padding-bottom: 0px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     padding-top: 30px;
     padding-bottom: 0px;
   }
@@ -133,7 +135,7 @@ svg text {
     min-width: 400px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     font-size: 60px;
     line-height: 61px;
     max-width: 608px;
@@ -169,6 +171,7 @@ svg text {
   }
 }
 
+
 .search-form {
   display: flex;
   flex-wrap: wrap;
@@ -185,9 +188,10 @@ svg text {
 }
 
 .search-form input {
+
   min-width: 280px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.2);
+  // background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
 
   border-radius: 20px;
@@ -198,12 +202,18 @@ svg text {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: var(--grey-text-color);
+  color: var(--title-text-color);
   transition: 1s;
   cursor: pointer;
+  background: var(--options-text-color);
+  // background: rgba(255, 255, 255, 0.586);
+  backdrop-filter: blur(20px);
+  // color: var(--grey-text-color);
+  box-shadow: 0px 0px 5px 5px var(--accent-color);
 
   :placeholder {
-    color: var(--options-text-color);
+    color: var(--modal-text-color);
+
   }
 
   @media screen and (min-width: 768px) {
@@ -211,20 +221,20 @@ svg text {
     height: 40px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     min-width: 288px;
     height: 40px;
   }
 }
 
+
 .search-form input:hover,
 .search-form input:focus {
-  background: var(--options-text-color);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  color: var(--grey-text-color);
-  box-shadow: 0px 0px 5px 5px var(--accent-color);
+  box-shadow: 0px 0px 5px 5px white;
+  background: rgba(42, 42, 42, 0.586);
+
 }
+
 
 .input-form {
   position: relative;
@@ -238,35 +248,49 @@ svg text {
   align-items: center;
 }
 
+
 .custom-select-panel {
-  // display: none;
+  min-width: 250px;
+
   height: 210px;
   border: none;
   border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
-  border-radius: 20px;
+  // border-radius: 20px;
   padding: 5px 0px;
   color: var(--options-text-color);
   overflow: auto;
   margin: 0;
-  min-width: 280px;
+
+  margin-left: 15px;
+  margin-right: 15px;
   margin-top: 2px;
   transition: 0.5s;
   transform: translateY(100%);
   transition: transform 250ms ease;
-  // overflow: hidden;
-  // visibility: hidden;
   transition: 0.3s linear;
   opacity: 0;
   transform-origin: top center;
 
   &:hover {
-    box-shadow: 0px 0px 5px 5px var(--accent-color);
+    box-shadow: 0px 5px 5px 5px white;
   }
 
   &::-webkit-scrollbar {
     display: none;
+
+  }
+
+  @media screen and (min-width: 768px) {
+    min-width: 250px;
+
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-width: 260px;
   }
 }
 
@@ -275,9 +299,7 @@ svg text {
 }
 
 .custom-select-container.is-open .custom-select-panel {
-  // display: block;
   transform: translateY(0%);
-  // visibility: visible;
   opacity: 1;
 }
 
@@ -286,39 +308,45 @@ select {
 }
 
 .custom-select-container {
+  z-index: 1000;
   position: relative;
   border: none;
   border-radius: 20px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
+
+  background: var(--options-text-color);
   backdrop-filter: blur(20px);
   color: var(--grey-text-color);
-  min-width: 280px;
+  width: 280px;
   height: 40px;
   transition: 1s;
+
   cursor: pointer;
+  box-shadow: 0px 0px 5px 5px var(--accent-color);
 
   @media screen and (min-width: 768px) {
     min-width: 336px;
     height: 40px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     min-width: 288px;
     height: 40px;
   }
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 5px 5px var(--accent-color);
+    box-shadow: 0px 0px 5px 5px white;
+    background: rgba(42, 42, 42, 0.586);
   }
 }
 
 .is-open {
   display: block;
+  z-index: 1000;
 }
 
 .custom-select-opener {
+  z-index: 1000;
   display: block;
   text-align: center;
 
@@ -334,6 +362,7 @@ select {
 }
 
 .custom-select-option {
+
   padding: 0.5px 30px;
   font-weight: 400;
   font-size: 16px;
