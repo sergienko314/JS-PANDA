@@ -1,5 +1,4 @@
 [
-
 {"name": "Australia", "code": "AU"},
 {"name": "Austria", "code": "AT"},
 {"name": "Belgium", "code": "BE"},
@@ -9,8 +8,6 @@
 {"name": "Denmark", "code": "DK"},
 {"name": "Estonia", "code": "EE"},
 {"name": "Finland", "code": "FI"},
-{"name": "France", "code": "FR"},
-{"name": "Georgia", "code": "GE"},
 {"name": "Germany", "code": "DE"},
 {"name": "Ireland", "code": "IE"},
 {"name": "Luxembourg", "code": "LU"},
@@ -18,7 +15,6 @@
 {"name": "Netherlands", "code": "NL"},
 {"name": "New Zealand", "code": "NZ"},
 {"name": "Norway", "code": "NO"},
-{"name": "Poland", "code": "PL"},
 {"name": "Spain", "code": "ES"},
 {"name": "Swaziland", "code": "SZ"},
 {"name": "Sweden", "code": "SE"},
