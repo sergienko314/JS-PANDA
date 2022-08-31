@@ -138,7 +138,7 @@ a {
   display: inline-block;
   width: 17px;
   height: 17px;
-  fill: #4c00fe;
+  fill: white;
 
   @media screen and (min-width: 1280px) {
     width: 25px;
@@ -223,10 +223,9 @@ a {
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
   text-align: center;
   color: #ff37de;
-  // box-shadow: 0px 0px 5px 5px var(--accent-color);
 
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -245,10 +244,10 @@ a {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   text-align: center;
   text-shadow: rgb(0, 0, 0) 1px 0 5px;
-  color: #ffffff;
+  color: var(--title-text-color);
 
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -264,11 +263,11 @@ a {
 .modal__info--prices {
   margin-bottom: 16px;
   text-align: center;
-  // color: #0e0e0e;
-  color: #ffffff;
+  color: var(--title-text-color);
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
 
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   font-style: normal;
   font-weight: 400;
 
@@ -279,7 +278,7 @@ a {
   @media screen and (min-width: 1280px) {
     margin-bottom: 20px;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.22;
   }
 }
 
@@ -291,8 +290,8 @@ a {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  color: #fff;
-  background: #4c00fe;
+  color: var(--title-text-color);
+  background: var(--modal-btn-color);
   margin-left: auto;
   margin-right: auto;
   padding: 10px 0;
@@ -312,9 +311,9 @@ a {
 
 .modal__btn--buy:focus,
 .modal__btn--buy:hover {
-  color: #3702b2;
+  color: var(--modal-btn-color);
   background: #fff;
-  border: 1px solid #4c00fe;
+  border: 1px solid var(--modal-btn-color);
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
@@ -330,10 +329,10 @@ a {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   background: #fff2fd;
-  color: #4c00fe;
-  border: 1px solid #4c00fe;
+  color: var(--modal-btn-color);
+  border: 1px solid var(--modal-btn-color);
   border-radius: 5px;
 
   @media screen and (min-width: 768px) {
@@ -346,7 +345,7 @@ a {
 .modal__btn--more:focus,
 .modal__btn--more:hover {
   color: #fff2fd;
-  background: #4c00fe;
+  background: var(--modal-btn-color);
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
