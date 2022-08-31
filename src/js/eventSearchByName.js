@@ -48,7 +48,12 @@ async function onSearchForm() {
   //DLM<<
   try {
     list.innerHTML = '';
-    MakeListMarkup(res.data._embedded.events);
+    MakeListMarkup(
+      res.data._embedded.events.map(item => {
+        item.images = item.images.sort((b, a) => a.width - b.width);
+        return item;
+      })
+    );
   } catch (error) {
     return (list.innerHTML = errorPanda());
   }
