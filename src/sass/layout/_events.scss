@@ -171,6 +171,9 @@ a {
     line-height: 1.25;
   }
 }
+// .info-item__location::before {
+
+// }
 
 .info-item__location {
   font-style: normal;
@@ -191,13 +194,26 @@ a {
 .info-group {
   display: flex;
   gap: 5px;
-}
+  max-width: 130px;
 
+  @media screen and (min-width: 768px) {
+    max-width: 152px;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 267px;
+  }
+}
+.info-icon {
+  width: 25px;
+  height: 25px;
+}
 .icon-location {
-  width: 11px;
-  height: 15px;
-  fill: white;
-  transition: fill white white, transform white white;
+  flex-grow: 2;
+  width: 45px;
+  // height: 35px;
+  // fill: white;
+
+  // transition: fill white white, transform white white;
 
   .info-group:hover &,
   .info-group:focus & {
