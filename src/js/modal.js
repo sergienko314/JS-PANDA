@@ -1,23 +1,35 @@
 import { options, BASE_URL } from './getEventsApi';
 import { fetchEvents } from './getEventsApi';
-import { MakeListMarkup } from './eventSearchByName';
+import { MakeListMarkup, pages, searchEvents } from './eventSearchByName';
 import axios from 'axios';
 import EventItemMarkup from '../templates/EventItemMarkup.hbs';
+import './eventSearchByName';
 //====================== MODAL
+const selectPanel = document.querySelector('#search-form'); //DLM
 
 const modalDiv = document.querySelector('.modal__markup');
 const backdrop = document.querySelector('.backdrop');
 const list = document.querySelector('.js-eventList');
+const modal = document.querySelector('.modal');
 
 export async function onEventLiClick(e) {
   e.preventDefault();
-  backdrop.classList.remove('is-hidden');
-  document.body.style.overflow = 'hidden';
-  const eventId = e.target.parentNode.parentNode.id;
-  options.params.id = eventId;
-  const res = await fetchEventsById();
-  makeModalMarkup(res);
-  console.log(res);
+  const ul = e.target.closest('ul');
+  if (e.target.nodeName === 'A') {
+    let location = e.target.textContent;
+    return window.open(`https://www.google.com.ua/maps/place/${location}`);
+  }
+  if (e.target !== ul && e.target.nodeName !== 'A') {
+    backdrop.classList.remove('is-hidden');
+    modal.classList.add('bounce-in-top');
+    document.body.style.overflow = 'hidden';
+    const eventId = e.target.parentNode.parentNode.id;
+    options.params.id = eventId;
+    const res = await fetchEventsById();
+    makeModalMarkup(res);
+  } else {
+    return;
+  }
 }
 
 export function makeModalMarkup(data) {
@@ -35,12 +47,23 @@ export async function onAuthorClick(e) {
   options.params.id = '';
   const who = document.querySelector('.js-who').textContent;
   options.params.keyword = who;
+  selectPanel[0].value = who; ///DLM
   try {
     const res = await axios.get(`${BASE_URL}.json?`, options);
-    console.log(res.data._embedded.events);
-    console.log(options);
+    //DLM>>
+    pages.params.currentPage = 1;
+    pages.params.recurcycall = 0;
+    if (res.data.page.totalElements >= 994) {
+      pages.params.totalPage = Math.ceil(994 / 20);
+    } else {
+      pages.params.totalPage = Math.ceil(res.data.page.totalElements / 20);
+    }
+    //DLM<<
+
     MakeListMarkup(res.data._embedded.events);
   } catch (error) {
+    pages.params.currentPage = 1; //DLM
+    searchEvents(); //DLM
     console.error(error);
   }
 }
@@ -61,9 +84,10 @@ export async function fetchEventsById() {
 const btnClose = document.querySelector('.modal__btn--close');
 
 btnClose.addEventListener('click', e => {
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.add('is-hidden');
   document.body.style.overflow = 'visible';
   options.params.id = '';
+  modal.classList.remove('bounce-in-top');
 });
 
 document.addEventListener('keydown', function (e) {
@@ -71,6 +95,7 @@ document.addEventListener('keydown', function (e) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
     options.params.id = '';
+    modal.classList.remove('bounce-in-top');
   }
 });
 
@@ -79,5 +104,6 @@ document.addEventListener('click', function (e) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
     options.params.id = '';
+    modal.classList.remove('bounce-in-top');
   }
 });

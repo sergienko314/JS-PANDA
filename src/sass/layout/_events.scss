@@ -1,6 +1,20 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+a {
+  margin: 0;
+  padding: 0;
+}
+
 .events-container {
   padding-top: 120px;
 }
+
 .event-list {
   max-width: 280px;
   margin: 0px auto;
@@ -8,7 +22,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 32px 20px;
   justify-content: center;
 
   @media screen and (min-width: 768px) {
@@ -18,6 +32,7 @@
 
   @media screen and (min-width: 1280px) {
     max-width: 1248px;
+    gap: 40px 32px;
   }
 }
 
@@ -29,15 +44,35 @@
   width: 130px;
   min-height: 230px;
   list-style: none;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     width: 152px;
     min-height: 269px;
+    padding-top: 10px;
+    padding-right: 11px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 288px;
     min-height: 437px;
+    padding-top: 19px;
+    padding-right: 21px;
+  }
+
+  &:hover {
+    &::before {
+      pointer-events: none;
+      width: calc(100% + 10px);
+      height: calc(100% + 15px);
+      box-shadow: 0 0 10px 1px var(--accent-color);
+      transition-duration: 0.4s;
+
+      @media screen and (min-width: 768px) {
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+      }
+    }
   }
 }
 
@@ -65,13 +100,28 @@
   }
 }
 
-.event-item__info {
-  @media screen and (min-width: 768px) {
+@keyframes move {
+  0% {
+    transform: translateY(0);
   }
 
-  @media screen and (min-width: 1280px) {
+  100% {
+    transform: translateY(420px);
+  }
+}
+
+.event-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @media screen and (min-width: 768px) {
     gap: 8px;
   }
+
+  // @media screen and (min-width: 1280px) {
+
+  // }
 }
 
 .event-item__img {
@@ -135,6 +185,24 @@
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: 1.21;
+  }
+}
+
+.info-group {
+  display: flex;
+  gap: 5px;
+}
+
+.icon-location {
+  width: 11px;
+  height: 15px;
+  fill: white;
+  transition: fill white white, transform white white;
+
+  .info-group:hover &,
+  .info-group:focus & {
+    fill: white;
+    transform: scale(1.7) rotate(360deg);
   }
 }
 
