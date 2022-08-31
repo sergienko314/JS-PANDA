@@ -5,10 +5,12 @@ import EventItemMarkup from '../templates/EventItemMarkup.hbs';
 
 const modalDiv = document.querySelector('.modal__markup');
 const backdrop = document.querySelector('.backdrop');
+const modal = document.querySelector('.modal');
 
 export async function onEventLiClick(e) {
   e.preventDefault();
   backdrop.classList.remove('is-hidden');
+  modal.classList.add('bounce-in-top');
   document.body.style.overflow = 'hidden';
   const eventId = e.target.parentNode.parentNode.id;
   options.params.id = eventId;
@@ -38,14 +40,16 @@ export async function fetchEventsById() {
 const btnClose = document.querySelector('.modal__btn--close');
 
 btnClose.addEventListener('click', e => {
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.add('is-hidden');
   document.body.style.overflow = 'visible';
+  modal.classList.remove('bounce-in-top');
 });
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
+    modal.classList.remove('bounce-in-top');
   }
 });
 
@@ -53,5 +57,6 @@ document.addEventListener('click', function (e) {
   if (e.target === backdrop) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
+    modal.classList.remove('bounce-in-top');
   }
 });
