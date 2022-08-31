@@ -1,4 +1,4 @@
-import  './js/preloader'
+import './js/preloader';
 
 import { fetchEvents, options } from './js/getEventsApi';
 import {
@@ -11,4 +11,11 @@ import { onEventLiClick, makeModalMarkup } from './js/modal';
 import './js/pagination';
 import './js/modal';
 import './js/armymodal';
-fetchEvents().then(res => MakeListMarkup(res.data._embedded.events));
+fetchEvents().then(res =>
+  MakeListMarkup(
+    res.data._embedded.events.map(event => {
+      event.images = event.images.sort((a, b) => b.width - a.width);
+      return event;
+    })
+  )
+);

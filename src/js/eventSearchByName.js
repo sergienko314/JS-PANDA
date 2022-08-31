@@ -98,7 +98,12 @@ export const searchEvents = async () => {
     }
     if (pages.params.totalPage != 0) {
       list.innerHTML = '';
-      MakeListMarkup(events.data._embedded.events);
+      MakeListMarkup(
+        events.data._embedded.events.map(event => {
+          event.images = event.images.sort((b, a) => a.width - b.width);
+          return event;
+        })
+      );
     }
   } catch (error) {
     console.log(error.message);
