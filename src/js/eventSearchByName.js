@@ -77,7 +77,6 @@ function setCurrentPage(e) {
   pages.params.currentPage = Number(e.target.innerHTML);
   const pageId = e.target.dataset.id;
   if (pageId !== undefined) {
-    console.log(`pageId: ${pageId}`);
     searchEvents();
     createPagination(pages.params.totalPage, pages.params.currentPage);
   }
