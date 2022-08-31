@@ -34,7 +34,7 @@
   
   .close__btn:hover {
     cursor: pointer;
-    color: #ff0000;
+    color: var(--accent-color);
   }
   
   .modal__img-cat {
@@ -64,7 +64,7 @@
   }
   
   .modal-annoy__link:hover {
-    color: #fd5103;
+    color: var(--accent-color);
   }
   
   @keyframes animatemodal {
