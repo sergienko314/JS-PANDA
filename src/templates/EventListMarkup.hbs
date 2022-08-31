@@ -11,10 +11,8 @@
         />
         <p class='info-item__title'>{{name}}</p>
         <p class='info-item__date'>{{dates.start.localDate}}</p>
-        <p
-          class='info-item__location'
-        >{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}</p>
-
+       <a href="https://www.google.com.ua/maps/place/{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}" class='info-item__location'>{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}
+      </a>
       </div>
     </li>
   {{/each}}

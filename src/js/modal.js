@@ -12,7 +12,7 @@ const list = document.querySelector('.js-eventList');
 export async function onEventLiClick(e) {
   e.preventDefault();
   const ul = e.target.closest('ul');
-  if (e.target !== ul) {
+  if (e.target !== ul && e.target.nodeName !== 'A') {
     backdrop.classList.remove('is-hidden');
     document.body.style.overflow = 'hidden';
     const eventId = e.target.parentNode.parentNode.id;
