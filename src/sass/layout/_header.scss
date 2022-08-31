@@ -47,7 +47,7 @@
 
 .header-text {
   padding-top: 80px;
-  // padding-bottom: 24px;
+
   margin-top: 0;
 
   @media screen and (min-width: 768px) {
@@ -236,6 +236,10 @@ svg text {
   visibility: visible;
 }
 
+.custom-select-container.is-open .custom-select-option {
+  visibility: visible;
+}
+
 select {
   display: none;
 }
@@ -295,6 +299,7 @@ select {
 }
 
 .custom-select-option {
+  visibility: hidden;
   padding: 0.5px 30px;
   font-weight: 400;
   font-size: 16px;
