@@ -47,7 +47,7 @@ a {
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
-    width: 152px;
+    width: 200px;
     min-height: 269px;
     padding-top: 10px;
     padding-right: 11px;
@@ -111,15 +111,18 @@ a {
 }
 
 .event-item__info {
-  display: flex;
-  flex-direction: column;
   margin-top: auto;
   margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
 
   @media screen and (min-width: 768px) {
+    gap: 4px;
+  }
+  @media screen and (min-width: 1280px) {
     gap: 8px;
   }
 }
@@ -201,7 +204,7 @@ a {
   z-index: 10;
   fill: white;
   transition: fill white white, transform white white;
-
+  transform: scale(4);
   .info-group:hover &,
   .info-group:focus & {
     fill: white;
