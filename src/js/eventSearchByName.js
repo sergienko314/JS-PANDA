@@ -49,7 +49,6 @@ async function onSearchForm() {
   try {
     list.innerHTML = '';
     MakeListMarkup(res.data._embedded.events);
-    console.log(res.data._embedded.events);
   } catch (error) {
     return (list.innerHTML = errorPanda());
   }
@@ -77,7 +76,6 @@ function setCurrentPage(e) {
   pages.params.currentPage = Number(e.target.innerHTML);
   const pageId = e.target.dataset.id;
   if (pageId !== undefined) {
-    console.log(`pageId: ${pageId}`);
     searchEvents();
     createPagination(pages.params.totalPage, pages.params.currentPage);
   }
