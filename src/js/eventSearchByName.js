@@ -20,8 +20,8 @@ select.addEventListener('change', onSearchForm);
 selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
 
 async function onSearchForm() {
-  CountriKAY = selectPanel.elements.chooseQuery.value;
-  serchValue = selectPanel[0].value;
+  let CountriKAY = selectPanel.elements.chooseQuery.value;
+  let serchValue = selectPanel[0].value;
   options.params.keyword = serchValue;
   options.params.countryCode = CountriKAY;
   if (options.params.countryCode === 'Choose country') {
