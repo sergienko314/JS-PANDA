@@ -1,12 +1,12 @@
 .modal__bg {
     display: none;
-    //background-color: rgba(0, 0, 0, 0.2);
+  
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 10000;
   }
   
   .modal__annoy {
@@ -14,17 +14,13 @@
     background-color: #fff;
     position: absolute;
     width: 300px;
-    //top: 50%;
-    //left: 50%;
     bottom: 40px;
     right: 10px;
-    //transform: translate(-50%, -50%);
     padding: 10px 20px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //box-shadow: 0 2px 10px rgba(0,0,0,0.2), 0 5px 5px rgba(0,0,0,0.2);
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
     font-size: 1.5rem;
     animation-name: animatemodal;
@@ -81,44 +77,5 @@
       opacity: 1;
     }
   }
-  /*.modal__bg {
-    --border-width: 3px;
-  
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--border-width);
-  
-    &::after {
-      position: absolute;
-      content: "";
-      top: calc(-1 * var(--border-width));
-      left: calc(-1 * var(--border-width));
-      z-index: -1;
-      width: calc(100% + var(--border-width) * 2);
-      height: calc(100% + var(--border-width) * 2);
-      background: linear-gradient(
-        60deg,
-        hsl(224, 85%, 66%),
-        hsl(269, 85%, 66%),
-        hsl(314, 85%, 66%),
-        hsl(359, 85%, 66%),
-        hsl(44, 85%, 66%),
-        hsl(89, 85%, 66%),
-        hsl(134, 85%, 66%),
-        hsl(179, 85%, 66%)
-      );
-      background-size: 300% 300%;
-      background-position: 0 50%;
-      border-radius: calc(2 * var(--border-width));
-      animation: moveGradient 4s alternate infinite;
-    }
-  }
-  
-  @keyframes moveGradient {
-    50% {
-      background-position: 100% 50%;
-    }
-  }*/
+
   

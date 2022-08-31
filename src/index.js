@@ -9,7 +9,6 @@ import {
 import { onEventLiClick, makeModalMarkup } from './js/modal';
 
 import './js/pagination';
-//import './js/armymodal';
 import './js/modal';
-
+import './js/armymodal';
 fetchEvents().then(res => MakeListMarkup(res.data._embedded.events));

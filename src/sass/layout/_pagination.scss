@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;  
+  color: var(--title-text-color);  
 };
 
 .page {
@@ -22,10 +22,10 @@
   justify-content: space-between;
   padding: 5px 12px 5px 12px;
   cursor: pointer;
-  color: #fff;  
+  color: var(--title-text-color); 
   &:hover {
-    border: 1px solid #DC56C5;
-    color: #DC56C5;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
     border-radius: 10px 0px;
   }
 };
@@ -34,8 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #DC56C5;
-  border: 1px solid #DC56C5;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
   border-radius: 10px 0px;
   animation: changePage 0.5s ease-in-out;
 };
