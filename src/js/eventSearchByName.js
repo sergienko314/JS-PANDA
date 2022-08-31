@@ -49,7 +49,6 @@ async function onSearchForm() {
   try {
     list.innerHTML = '';
     MakeListMarkup(res.data._embedded.events);
-    console.log(res.data._embedded.events);
   } catch (error) {
     return (list.innerHTML = errorPanda());
   }
