@@ -1,5 +1,5 @@
 const PROMPT_DELAY = 3000;
-const MAX_PROMPT_ATTEMPTS = 3;
+const MAX_PROMPT_ATTEMPTS = 1;
 let promptCounter = 0;
 
 const modalBg = document.querySelector('.modal__bg');
@@ -26,10 +26,10 @@ closeBtn.addEventListener('click', function() {
 });
 
 
-window.addEventListener('click', function(event) {
+/* window.addEventListener('click', function(event) {
   if (event.target === modalBg) {
     showAnnoyModal('none');
   }
-});
+}); */
 
 openModalAnnoy();
