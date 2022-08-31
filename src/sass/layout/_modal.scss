@@ -10,6 +10,7 @@ a {
   margin: 0;
   padding: 0;
 }
+
 .backdrop {
   position: fixed;
   display: flex;
@@ -21,7 +22,7 @@ a {
   height: 100%;
   margin: 0;
   z-index: 1000;
-  background: rgba(32, 13, 29, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
 }
 
@@ -39,49 +40,74 @@ a {
 .modal {
   position: relative;
   display: block;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 5px 5px var(--accent-color);
+  backdrop-filter: blur(20px);
+
+  // background-color: white;
   width: 280px;
   height: auto;
-  min-height: 952px;
+  // min-height: 952px;
   border-radius: 150px 0px;
-  // transition: 0.25s linear;
-
-  animation: rotate-scale-up 1000ms linear both;
-
-  // overflow-y: scroll;
-  // animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-
-  // animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   @media screen and (min-width: 768px) {
     width: 704px;
-    min-height: 845px;
+    // min-height: 845px;
     border-radius: 300px 0px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 1034px;
-    min-height: 1010px;
+    // min-height: 1010px;
   }
 }
 
-@keyframes rotate-scale-up {
+.bounce-in-top {
+  animation: bounce-in-top 1000ms 50ms both;
+}
+
+@keyframes bounce-in-top {
   0% {
-    transform: scale(1) rotateZ(0);
+    transform: translateY(-500px);
+    animation-timing-function: ease-in;
+    opacity: 0;
   }
-  50% {
-    transform: scale(2) rotateZ(180deg);
+  38% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    animation-timing-function: ease-in;
   }
   100% {
-    transform: scale(1) rotateZ(360deg);
+    transform: translateY(0);
+    animation-timing-function: ease-out;
   }
 }
 
 .modal__btn--close {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: none;
-  background-color: white;
+  background-color: transparent;
   z-index: 1;
   top: 16px;
   right: 20px;
@@ -103,13 +129,13 @@ a {
 }
 .icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   fill: #4c00fe;
 
-  &:hover,
-  &:focus {
-    fill: #dc56c5;
+  @media screen and (min-width: 1280px) {
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -122,6 +148,7 @@ a {
   margin-bottom: 20px;
   margin-top: 80px;
   border-radius: 50%;
+  object-fit: cover;
 
   @media screen and (min-width: 768px) {
     width: 70px;
@@ -129,7 +156,7 @@ a {
     margin-bottom: 40px;
     margin-top: 32px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 132px;
     height: 132px;
     margin-top: 54px;
@@ -157,7 +184,7 @@ a {
     height: 445px;
     object-fit: cover;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 427px;
     height: 664px;
   }
@@ -178,7 +205,7 @@ a {
   @media screen and (min-width: 768px) {
     max-width: 287px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     max-width: 433px;
     gap: 20px;
   }
@@ -191,14 +218,14 @@ a {
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-
-  color: #dc56c5;
+  color: #ff37de;
+  // box-shadow: 0px 0px 5px 5px var(--accent-color);
 
   @media screen and (min-width: 768px) {
     text-align: left;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 7px;
 
     font-size: 24px;
@@ -213,14 +240,14 @@ a {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-
-  color: #0e0e0e;
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
+  color: #ffffff;
 
   @media screen and (min-width: 768px) {
     text-align: left;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 5px;
     font-size: 18px;
     line-height: 22px;
@@ -230,7 +257,9 @@ a {
 .modal__info--prices {
   margin-bottom: 16px;
   text-align: center;
-  color: #0e0e0e;
+  // color: #0e0e0e;
+  color: #ffffff;
+
   font-size: 16px;
   line-height: 20px;
   font-style: normal;
@@ -240,7 +269,7 @@ a {
     text-align: left;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 20px;
     font-size: 18px;
     line-height: 22px;
@@ -268,7 +297,7 @@ a {
     margin-right: 0;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 12px;
     font-size: 18px;
   }
@@ -301,8 +330,9 @@ a {
   border-radius: 5px;
 
   @media screen and (min-width: 768px) {
-    max-width: 255px;
+    min-width: 255px;
     margin-bottom: 40px;
+    padding: 10px 10px;
   }
 }
 
@@ -339,14 +369,3 @@ a {
     transform: rotate(2deg);
   }
 }
-
-// @keyframes shadow-drop-2-center {
-//   0% {
-//     transform: translateZ(0);
-//     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-//   }
-//   100% {
-//     transform: translateZ(50px);
-//     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-//   }
-// }

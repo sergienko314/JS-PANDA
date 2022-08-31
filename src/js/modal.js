@@ -8,12 +8,14 @@ import EventItemMarkup from '../templates/EventItemMarkup.hbs';
 const modalDiv = document.querySelector('.modal__markup');
 const backdrop = document.querySelector('.backdrop');
 const list = document.querySelector('.js-eventList');
+const modal = document.querySelector('.modal');
 
 export async function onEventLiClick(e) {
   e.preventDefault();
   const ul = e.target.closest('ul');
   if (e.target !== ul) {
     backdrop.classList.remove('is-hidden');
+    modal.classList.add('bounce-in-top');
     document.body.style.overflow = 'hidden';
     const eventId = e.target.parentNode.parentNode.id;
     options.params.id = eventId;
@@ -65,9 +67,10 @@ export async function fetchEventsById() {
 const btnClose = document.querySelector('.modal__btn--close');
 
 btnClose.addEventListener('click', e => {
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.add('is-hidden');
   document.body.style.overflow = 'visible';
   options.params.id = '';
+  modal.classList.remove('bounce-in-top');
 });
 
 document.addEventListener('keydown', function (e) {
@@ -75,6 +78,7 @@ document.addEventListener('keydown', function (e) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
     options.params.id = '';
+    modal.classList.remove('bounce-in-top');
   }
 });
 
@@ -83,5 +87,6 @@ document.addEventListener('click', function (e) {
     backdrop.classList.add('is-hidden');
     document.body.style.overflow = 'visible';
     options.params.id = '';
+    modal.classList.remove('bounce-in-top');
   }
 });
