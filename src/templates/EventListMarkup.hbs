@@ -1,7 +1,6 @@
 <ul class='event-list'>
   {{#each this}}
     <li class='event-item' id={{id}}>
-
       <div class='event-item__info'>
         <img
           class='event-item__img'
@@ -31,8 +30,24 @@
             class='info-item__location'
           >{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}</p>
         </div>
-
+  <li class='event-item' id={{id}}>
+    <div class='event-item__info'>
+      <img class='event-item__img' src={{images.1.url}} alt={{name}} loading='lazy' />
+      <p class='info-item__title'>{{name}}</p>
+      <p class='info-item__date'>{{dates.start.localDate}}</p>
+      <div class='info-group'>
+        <svg class='icon-location' width='11' height='15'>
+          <path viewBox='0 0 11 15'
+            d='M12.308 0c6.786 0 12.308 5.468 12.308 12.188 0 2.659-0.848 5.186-2.455 7.306l-9.094 12.128c-0.023 0.029-0.057 0.041-0.083 0.067-0.454 0.482-1.11 0.361-1.434-0.067-2.619-3.46-7.419-9.922-9.264-12.359 0 0-0.001-0.002-0.001-0.003l-0.011-0.015c-1.487-2.069-2.273-4.509-2.273-7.057 0-6.72 5.521-12.188 12.308-12.188zM12.308 18.762c3.654 0 6.64-2.957 6.64-6.575s-2.986-6.575-6.64-6.575c-3.654 0-6.64 2.957-6.64 6.575s2.986 6.575 6.64 6.575z'>
+          </path>
+        </svg>
+         <a
+      href="https://www.google.com.ua/maps/place/{{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}"
+      class="info-item__location" <base target="_blank">
+      {{_embedded.venues.0.city.name}},{{_embedded.venues.0.address.line1}}
+    </a>
       </div>
-    </li>
+    </div>
+  </li>
   {{/each}}
 </ul>

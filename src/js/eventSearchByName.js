@@ -10,11 +10,13 @@ import { createPagination } from './pagination.js';
 const list = document.querySelector('.js-eventList');
 const pagination = document.querySelector('.pagination');
 const selectPanel = document.querySelector('#search-form');
-export let pages = {params:{
-  currentPage: 1,
-  totalPage: '',
-  recurcycall: 0,
-},};
+export let pages = {
+  params: {
+    currentPage: 1,
+    totalPage: '',
+    recurcycall: 0,
+  },
+};
 
 /* let currentPage = 1;
 let totalPage = ''; */
@@ -26,8 +28,8 @@ select.addEventListener('change', onSearchForm);
 selectPanel.addEventListener('input', debounce(onSearchForm, 1000));
 
 async function onSearchForm() {
-  CountriKAY = selectPanel.elements.chooseQuery.value;
-  serchValue = selectPanel[0].value;
+  let CountriKAY = selectPanel.elements.chooseQuery.value;
+  let serchValue = selectPanel[0].value;
   options.params.keyword = serchValue;
   options.params.countryCode = CountriKAY;
   if (options.params.countryCode === 'Choose country') {
@@ -47,7 +49,6 @@ async function onSearchForm() {
   try {
     list.innerHTML = '';
     MakeListMarkup(res.data._embedded.events);
-    console.log(res.data._embedded.events);
   } catch (error) {
     return (list.innerHTML = errorPanda());
   }
@@ -75,7 +76,6 @@ function setCurrentPage(e) {
   pages.params.currentPage = Number(e.target.innerHTML);
   const pageId = e.target.dataset.id;
   if (pageId !== undefined) {
-    console.log(`pageId: ${pageId}`);
     searchEvents();
     createPagination(pages.params.totalPage, pages.params.currentPage);
   }
@@ -83,7 +83,7 @@ function setCurrentPage(e) {
 
 //Пошук івенту за ключовим словом для підключення пагінації.
 export const searchEvents = async () => {
-  pages.params.recurcycall=1;
+  pages.params.recurcycall = 1;
   try {
     if (selectPanel.elements.chooseQuery.value.length <= 2) {
       options.params.countryCode = selectPanel.elements.chooseQuery.value;
@@ -97,7 +97,6 @@ export const searchEvents = async () => {
       pages.params.totalPage = Math.ceil(events.data.page.totalElements / 20);
     }
     if (pages.params.totalPage != 0) {
-      console.log(events.data._embedded.events);
       list.innerHTML = '';
       MakeListMarkup(events.data._embedded.events);
     }
