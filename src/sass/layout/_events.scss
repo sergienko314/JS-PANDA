@@ -113,15 +113,15 @@ a {
 .event-item__info {
   display: flex;
   flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-
-  // @media screen and (min-width: 1280px) {
-
-  // }
 }
 
 .event-item__img {
@@ -191,11 +191,14 @@ a {
 .info-group {
   display: flex;
   gap: 5px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 .icon-location {
-  width: 11px;
-  height: 15px;
+  max-width: 40px;
+  z-index: 10;
   fill: white;
   transition: fill white white, transform white white;
 
