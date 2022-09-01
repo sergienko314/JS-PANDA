@@ -226,6 +226,7 @@ a {
   line-height: 1.2;
   text-align: center;
   color: #ff37de;
+  cursor: default;
 
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -240,6 +241,7 @@ a {
 }
 
 .modal__info--text {
+  cursor: default;
   margin-bottom: 3px;
   font-style: normal;
   font-weight: 400;
@@ -261,6 +263,7 @@ a {
 }
 
 .modal__info--prices {
+  cursor: default;
   margin-bottom: 16px;
   text-align: center;
   color: var(--title-text-color);
@@ -318,6 +321,7 @@ a {
 }
 
 .modal__btn--more {
+  cursor: pointer;
   display: block;
   max-width: 230px;
   height: 40px;
